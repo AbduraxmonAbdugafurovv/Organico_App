@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organico/base/baseview.dart';
+import 'package:organico/core/components/main_button.dart';
+import 'package:organico/core/components/sign/inputfield.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/extension/context_extension.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
@@ -29,14 +32,14 @@ class _SignInPageState extends State<SignInPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: context.height * 0.07,
+                    height: ScreenUtil().setHeight(46),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: SvgPicture.asset("assets/icons/sign_in_icon.svg"),
                   ),
                   SizedBox(
-                    height: context.height * 0.07,
+                    height: ScreenUtil().setHeight(65.89),
                   ),
                   Text(
                     "Welcome",
@@ -46,7 +49,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                   SizedBox(
-                    height: context.height * 0.02,
+                    height: ScreenUtil().setHeight(16),
                   ),
                   Text(
                     "Welcome to organico Mobile Apps. Please fill in the field delow to sign in",
@@ -56,31 +59,19 @@ class _SignInPageState extends State<SignInPage> {
                         color: ColorConst.black.withOpacity(0.4)),
                   ),
                   SizedBox(
-                    height: context.height * 0.08,
+                    height: ScreenUtil().setHeight(32),
                   ),
                   Form(
+                    key: _key,
                     child: Column(
                       children: [
-                        TextFormField(
-                          controller: _phoneNumberController,
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 13),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: ColorConst.green),
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          ),
-                          validator: (v) {},
-                        ),
+                        phoneInput(_phoneNumberController),
                         SizedBox(
-                          height: context.height * .03,
+                          height: ScreenUtil().setHeight(20),
                         ),
                         TextFormField(
                           controller: _passwordController,
                           decoration: InputDecoration(
-                            // counterText: "Forgot password",
-                            // counterStyle: TextStyle(fontSize: FontConst.mediumFont,color: ColorConst.green,fontWeight: FontWeight.w700),
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 15, vertical: 12),
                             prefixIcon: Padding(
@@ -98,13 +89,14 @@ class _SignInPageState extends State<SignInPage> {
                           ),
                         ),
                         SizedBox(
-                          height: context.height * 0.015,
+                          height: ScreenUtil().setHeight(24),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: context.width * 0.55),
                           child: TextButton(
                               onPressed: () {
-                                NavigationService.instance.pushNamed("");
+                                NavigationService.instance
+                                    .pushNamed("forgot_password");
                               },
                               child: Text(
                                 "Forgot password",
@@ -117,13 +109,15 @@ class _SignInPageState extends State<SignInPage> {
                       ],
                     ),
                   ),
-                  Container(
-                    height: context.height*0.05,
-                    decoration: BoxDecoration(
-                      color: ColorConst.kPimaryColor,
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                  )
+                  SizedBox(
+                    height: ScreenUtil().setHeight(46),
+                  ),
+                  InkWell(
+                    child: mainButton("Sign In"),
+                    onTap: () {
+                      NavigationService.instance.pushNamed("sign_up");
+                    },
+                  ),
                 ],
               ),
             ),

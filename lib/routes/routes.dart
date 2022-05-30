@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:organico/screens/auth/forgot_password.dart';
 import 'package:organico/screens/auth/sign_in_page.dart';
+import 'package:organico/screens/auth/sign_up.dart';
 import 'package:organico/screens/auth/splash_page.dart';
 
 class MyRoutes {
@@ -13,6 +15,10 @@ class MyRoutes {
       return route(const SplashPage());
       case "sign_in":
       return route(const SignInPage());
+       case "sign_up":
+      return route(const SignUpPage());
+       case "forgot_password":
+      return route(const ForgotPassword());
     }
     return null;
   }

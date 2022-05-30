@@ -9,6 +9,7 @@ class FontConst {
 }
 
 class ColorConst {
+  static Color darkGrey = const Color(0xff696974);
   static Color kPimaryColor = const Color(0xffAA0023);
   static Color white = Colors.white;
   static Color black = Colors.black;
