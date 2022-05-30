@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/routes/routes.dart';
 
-void main() {
+void main()async {
   runApp(const MyApp());
 }
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "splash",
+      initialRoute: "sign_in",
       onGenerateRoute: MyRoutes.instance.onGenerateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,
     );
