@@ -5,11 +5,13 @@ import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/routes/routes.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/view/sign_in_page.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
 
 void main() async {
   runApp(
     MultiBlocProvider(providers: [
       BlocProvider(create: (context) => AuthCubit()),
+      BlocProvider(create: (context) => HomeCubit())
     ], child: const MyApp()),
   );
 }
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: "reset_password",
+          initialRoute: "bottom_navigation",
           onGenerateRoute: MyRoutes.instance.onGenerateRoute,
           navigatorKey: NavigationService.instance.navigatorKey,
         );
