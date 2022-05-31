@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: "confirm",
+          initialRoute: "reset_password",
           onGenerateRoute: MyRoutes.instance.onGenerateRoute,
           navigatorKey: NavigationService.instance.navigatorKey,
         );

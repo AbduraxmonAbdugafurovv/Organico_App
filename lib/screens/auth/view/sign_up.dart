@@ -19,14 +19,17 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  bool isCheked = false;
-  final _nameController = TextEditingController();
-  final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
-  bool obsecureText1 = true;
-  bool obsecureText2 = true;
   @override
   Widget build(BuildContext context) {
+    bool obsecureText1 = context.watch<AuthCubit>().obsecureText1;
+    bool obsecureText2 = context.watch<AuthCubit>().obsecureText2;
+    bool isCheked = context.watch<AuthCubit>().isCheked;
+    TextEditingController passwordController =
+        context.watch<AuthCubit>().passwordConroller;
+    TextEditingController confirmPasswordController =
+        context.watch<AuthCubit>().confirmpasswordController;
+    TextEditingController nameController =
+        context.watch<AuthCubit>().nameConroller;
     return BaseView(
       viewModal: const SignUpPage(),
       onPageBuildre: (context, widget) {
@@ -47,15 +50,12 @@ class _SignUpPageState extends State<SignUpPage> {
                         height: ScreenUtil().setHeight(68),
                       ),
                       Text(
-                        "It took like you don't have an account on this number . Please let us know some information for a secure service.",
-                        style: TextStyle(
-                            fontSize: FontConst.mediumFont,
-                            fontWeight: FontWeight.w400,
-                            color: ColorConst.grey),
-                      ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(48),
-                      ),
+                          "It took like you don't have an account on this number . Please let us know some information for a secure service.",
+                          style: TextStyle(
+                              fontSize: FontConst.mediumFont,
+                              fontWeight: FontWeight.w400,
+                              color: ColorConst.grey)),
+                      SizedBox(height: ScreenUtil().setHeight(48)),
                       Form(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,28 +63,29 @@ class _SignUpPageState extends State<SignUpPage> {
                             textBeforeInput("Full name"),
                             SizedBox(height: ScreenUtil().setHeight(10)),
                             TextFormField(
-                              controller: _nameController,
-                              decoration: InputDecoration(
-                                hintText: "Full name",
-                                hintStyle: hintStyle(),
-                                contentPadding: EdgeInsets.symmetric(
-                                    horizontal: ScreenUtil().setWidth(16),
-                                    vertical: ScreenUtil().setHeight(13)),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                            ),
+                                controller: nameController,
+                                decoration: InputDecoration(
+                                    hintText: "Full name",
+                                    hintStyle: hintStyle(),
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: ScreenUtil().setWidth(16),
+                                        vertical: ScreenUtil().setHeight(13)),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(100),
+                                    ))),
                             SizedBox(height: ScreenUtil().setHeight(16)),
                             textBeforeInput("Password"),
                             SizedBox(height: ScreenUtil().setHeight(10)),
-                            inputfield(
-                                _passwordController, "Password", obsecureText1),
+                            inputfield(context, passwordController, "Password",
+                                contex.watch<AuthCubit>().obsecureText1),
                             SizedBox(height: ScreenUtil().setHeight(16)),
                             textBeforeInput("Confirm Password"),
                             SizedBox(height: ScreenUtil().setHeight(10)),
-                            inputfield(_confirmPasswordController,
-                                "Confirm Passowrd", obsecureText2)
+                            inputfield(
+                                contex,
+                                confirmPasswordController,
+                                "Confirm Passowrd",
+                                contex.watch<AuthCubit>().obsecureText2)
                           ],
                         ),
                       ),
@@ -106,26 +107,20 @@ class _SignUpPageState extends State<SignUpPage> {
                             style: TextStyle(color: ColorConst.green),
                           ),
                           const Text(" and "),
-                          Text(
-                            "Privacy policy",
-                            style: TextStyle(color: ColorConst.green),
-                          ),
+                          Text("Privacy policy",
+                              style: TextStyle(color: ColorConst.green)),
                         ],
                       ),
                       SizedBox(
                         height: ScreenUtil().setHeight(45),
                       ),
                       mainButton("Sign Up"),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(24),
-                      ),
+                      SizedBox(height: ScreenUtil().setHeight(24)),
                       Center(
                         child: Text("or use",
                             style: TextStyle(color: ColorConst.grey)),
                       ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(24),
-                      ),
+                      SizedBox(height: ScreenUtil().setHeight(24)),
                       InkWell(
                         child: signWithGoogle(),
                         onTap: () {},
@@ -140,34 +135,6 @@ class _SignUpPageState extends State<SignUpPage> {
           }
         });
       },
-    );
-  }
-
-  TextFormField inputfield(controller, hint, bool obsecure) {
-    return TextFormField(
-      obscureText: obsecure,
-      controller: controller,
-      decoration: InputDecoration(
-        hintText: hint,
-        hintStyle: hintStyle(),
-        suffixIcon: IconButton(
-            splashRadius: 13,
-            onPressed: () {
-              setState(() {
-                obsecure = false;
-              });
-            },
-            icon: obsecure
-                ? const Icon(Icons.remove_red_eye_rounded)
-                : const Icon(Icons.remove_red_eye_outlined)),
-        contentPadding: EdgeInsets.symmetric(
-            horizontal: ScreenUtil().setWidth(16),
-            vertical: ScreenUtil().setHeight(13)),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(100),
-        ),
-      ),
-      validator: (v) {},
     );
   }
 }

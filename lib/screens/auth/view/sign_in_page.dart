@@ -21,13 +21,15 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController phoneNumberController = context.watch<AuthCubit>().phoneNumberConroller;
-    TextEditingController passwordController = context.watch<AuthCubit>().passwordConroller;
-    GlobalKey key  = context.watch<AuthCubit>().key;
+    TextEditingController phoneNumberController =
+        context.watch<AuthCubit>().phoneNumberConroller;
+    TextEditingController passwordController =
+        context.watch<AuthCubit>().passwordConroller;
+    GlobalKey key = context.watch<AuthCubit>().key;
     return BaseView(
       viewModal: const SignInPage(),
       onPageBuildre: (context, widget) {
-        return BlocBuilder<AuthCubit,AuhtState>(builder: (context, state) {
+        return BlocBuilder<AuthCubit, AuhtState>(builder: (context, state) {
           if (state is AuthInitial) {
             return Scaffold(
               body: SingleChildScrollView(
@@ -36,7 +38,9 @@ class _SignInPageState extends State<SignInPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: ScreenUtil().setHeight(24),),
+                      SizedBox(
+                        height: ScreenUtil().setHeight(24),
+                      ),
                       SizedBox(
                         height: ScreenUtil().setHeight(46),
                       ),
@@ -107,13 +111,11 @@ class _SignInPageState extends State<SignInPage> {
                                     NavigationService.instance
                                         .pushNamed("forgot_password");
                                   },
-                                  child: Text(
-                                    "Forgot password",
-                                    style: TextStyle(
-                                        fontSize: FontConst.mediumFont,
-                                        fontWeight: FontWeight.w700,
-                                        color: ColorConst.green),
-                                  )),
+                                  child: Text("Forgot password",
+                                      style: TextStyle(
+                                          fontSize: FontConst.mediumFont,
+                                          fontWeight: FontWeight.w700,
+                                          color: ColorConst.green))),
                             ),
                           ],
                         ),

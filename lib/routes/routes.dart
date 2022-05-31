@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:organico/screens/auth/view/confirm_number.dart';
 import 'package:organico/screens/auth/view/forgot_password.dart';
+import 'package:organico/screens/auth/view/reset_pass.dart';
 import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/auth/view/sign_up.dart';
 import 'package:organico/screens/auth/view/splash_page.dart';
@@ -22,6 +23,8 @@ class MyRoutes {
         return route(const ForgotPassword());
       case "confirm":
         return route(const ConfirmPage());
+      case "reset_password":
+        return route(const ResetPasswordPage());
     }
     return null;
   }
