@@ -6,6 +6,7 @@ class AuthCubit extends Cubit<AuhtState> {
   AuthCubit() : super(AuthInitial());
 
   TextEditingController nameConroller = TextEditingController();
-  TextEditingController phoneNumberConroller = TextEditingController();
+  TextEditingController phoneNumberConroller = TextEditingController(text: "+998");
   TextEditingController passwordConroller = TextEditingController();
+  final key = GlobalKey<FormState>();
 }

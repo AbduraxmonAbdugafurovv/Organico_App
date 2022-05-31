@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/routes/routes.dart';
-import 'package:organico/screens/auth/sign_in_page.dart';
+import 'package:organico/screens/auth/cubit/auth_cubit.dart';
+import 'package:organico/screens/auth/view/sign_in_page.dart';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(
+    MultiBlocProvider(providers: [
+      BlocProvider(create: (context) => AuthCubit()),
+    ], child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +30,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: "forgot_password",
+          initialRoute: "confirm",
           onGenerateRoute: MyRoutes.instance.onGenerateRoute,
           navigatorKey: NavigationService.instance.navigatorKey,
         );
