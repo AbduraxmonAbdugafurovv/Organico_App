@@ -8,6 +8,7 @@ import 'package:organico/screens/auth/view/splash_page.dart';
 import 'package:organico/screens/home/view/bottom_navigation.dart';
 import 'package:organico/screens/home/view/home/coupon_page.dart';
 import 'package:organico/screens/home/view/home/info_page.dart';
+import 'package:organico/screens/home/view/home/vegetables_page.dart';
 
 class MyRoutes {
   static final MyRoutes _instance = MyRoutes._init();
@@ -34,6 +35,8 @@ class MyRoutes {
         return route(const InfoPage());
       case "coupon_page":
         return route(const CouponPage());
+      case "vegetables":
+        return route(const VegetablesPage());
     }
     return null;
   }

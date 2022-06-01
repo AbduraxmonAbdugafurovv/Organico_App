@@ -45,42 +45,70 @@ class _HomeSreenState extends State<HomeSreen> {
               ),
               SizedBox(height: ScreenUtil().setHeight(45)),
               InkWell(
-                child: ListTile(
-                  contentPadding: const EdgeInsets.all(0),
-                  leading: SvgPicture.asset("assets/icons/cupon.svg"),
-                  trailing: SvgPicture.asset("assets/icons/right.svg"),
-                  title: listTitile("You have 3 coupon"),
-                  subtitle: listSubtitle("Let's use this coupon"),
-                ),
-                onTap: (){
-                  NavigationService.instance.pushNamed("coupon_page");
-                }
+                  child: ListTile(
+                    contentPadding: const EdgeInsets.all(0),
+                    leading: SvgPicture.asset("assets/icons/cupon.svg"),
+                    trailing: SvgPicture.asset("assets/icons/right.svg"),
+                    title: listTitile("You have 3 coupon"),
+                    subtitle: listSubtitle("Let's use this coupon"),
+                  ),
+                  onTap: () {
+                    NavigationService.instance.pushNamed("coupon_page");
+                  }),
+              SizedBox(
+                height: ScreenUtil().setHeight(25),
               ),
-              SizedBox(height: ScreenUtil().setHeight(25),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Choose Category",style: TextStyle(fontSize: FontConst.mediumFont+2,fontWeight: FontWeight.w700)),
-                  Text("See all",style: TextStyle(color: ColorConst.darkGrey,fontWeight: FontWeight.w400),)
+                  Text("Choose Category",
+                      style: TextStyle(
+                          fontSize: FontConst.mediumFont + 2,
+                          fontWeight: FontWeight.w700)),
+                  InkWell(
+                    child: Text(
+                      "See all",
+                      style: TextStyle(
+                          color: ColorConst.darkGrey,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    onTap: () {
+                      NavigationService.instance.pushNamed("vegetables");
+                    }
+                  )
                 ],
               ),
               SizedBox(height: ScreenUtil().setHeight(16)),
               SizedBox(
                 height: ScreenUtil().setHeight(134),
                 child: ListView.builder(
-                  itemCount: 4,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context,index){
-                  return Container(
-                    margin: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(8)),
-                    width: ScreenUtil().setWidth(123),
-                    height: ScreenUtil().setHeight(134),
-                    decoration: BoxDecoration(
-                      color: ColorConst.green,
-                      borderRadius: BorderRadius.circular(20)),
-                  );
-                }),
-              )
+                    itemCount: 4,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal: ScreenUtil().setWidth(8)),
+                        width: ScreenUtil().setWidth(123),
+                        height: ScreenUtil().setHeight(134),
+                        decoration: BoxDecoration(
+                            color: ColorConst.green,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(25),
+                              child: Image.asset("assets/icons/broccoli.png"),
+                            ),
+                            Text("Vegetables",
+                                style: TextStyle(
+                                    fontSize: FontConst.mediumFont,
+                                    fontWeight: FontWeight.w600)),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+              // Text("Best selling ")
             ],
           ),
         ),
