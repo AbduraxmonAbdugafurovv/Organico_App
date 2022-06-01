@@ -9,6 +9,12 @@ class FontConst {
 }
 
 class ColorConst {
+  static Color redColor = const Color(0xffab0023);
+  static Color redAccentColor = const Color(0xffd33865);
+  static Color purple = const Color(0xffd33865);
+
+  static Color purpleAccent = const Color.fromRGBO(170, 0, 35, 0.15);
+  static Color blueWhite = const Color(0xffE9F0F7);
   static Color darkGrey = const Color(0xff696974);
   static Color kPimaryColor = const Color(0xffAA0023);
   static Color white = Colors.white;

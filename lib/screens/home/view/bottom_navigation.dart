@@ -5,6 +5,7 @@ import 'package:organico/base/baseview.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/view/home/home_screen.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class BottomNavigationPage extends StatefulWidget {
 
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   final pages = [
-    const Text("a"),
+    const HomeSreen(),
     const Text("b"),
     const Text("c"),
     const Text("d"),

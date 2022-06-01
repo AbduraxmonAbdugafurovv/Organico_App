@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:organico/core/components/home/list_title.dart';
+import 'package:organico/core/components/home/plus_minus_buttons.dart';
+import 'package:organico/core/components/main_button.dart';
 import 'package:organico/core/constant/constant.dart';
+import 'package:organico/core/extension/context_extension.dart';
 
 class InfoPage extends StatefulWidget {
   const InfoPage({Key? key}) : super(key: key);
@@ -70,21 +74,55 @@ class _InfoPageState extends State<InfoPage> {
                 )
               ],
             ),
-            Text("\$4.99/Kg",style: TextStyle(fontSize: FontConst.extraLargeFont,fontWeight: FontWeight.w600,),)
+            Text(
+              "\$4.99/Kg",
+              style: TextStyle(
+                fontSize: FontConst.extraLargeFont,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(
+              height: ScreenUtil().setHeight(48),
+            ),
+            Text("Details",
+                style: TextStyle(
+                    fontSize: FontConst.mediumFont + 2,
+                    fontWeight: FontWeight.w700)),
+            SizedBox(height: ScreenUtil().setHeight(16)),
+            Text(
+                "Papriska is aafruit producting plant that astest sweet and slightlyspicy from the eggplant or Solanaceae tribe . It's green yellow red or purple ",
+                style: TextStyle(
+                    fontSize: FontConst.mediumFont, color: ColorConst.grey)),
+                    SizedBox(height: ScreenUtil().setHeight(24),),
+            ListTile(
+              contentPadding:const  EdgeInsets.all(0),
+              leading: SvgPicture.asset("assets/icons/clock.svg"),
+              title:  listTitile("Time delivery"),
+              subtitle: listSubtitle("25 - 30 min"),
+            ),
+             ListTile(
+              contentPadding:const  EdgeInsets.all(0),
+              leading: SvgPicture.asset("assets/icons/tag.svg"),
+              title:  Text("Category",style: TextStyle(fontSize: FontConst.mediumFont+2,fontWeight: FontWeight.w700),),
+              subtitle: Text("Vegetable",style: TextStyle(color: ColorConst.grey,fontWeight: FontWeight.w400),),
+            ),
+            SizedBox(
+              width: context.width,
+              child: Row(
+                children: [
+                  Expanded(child: InkWell(child: mainButton("Add to cart"),onTap: (){},)),
+                  SvgPicture.asset("assets/icons/chat.svg"),
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
 
-  Container plusMinus(icon) {
-    return Container(
-      alignment: Alignment.center,
-      height: ScreenUtil().setHeight(40),
-      width: ScreenUtil().setHeight(40),
-      decoration: BoxDecoration(
-          color: ColorConst.green, borderRadius: BorderRadius.circular(10)),
-      child: SvgPicture.asset(icon),
-    );
-  }
+  
+
+  
+
 }

@@ -6,7 +6,8 @@ import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/auth/view/sign_up.dart';
 import 'package:organico/screens/auth/view/splash_page.dart';
 import 'package:organico/screens/home/view/bottom_navigation.dart';
-import 'package:organico/screens/home/view/info_page.dart';
+import 'package:organico/screens/home/view/home/coupon_page.dart';
+import 'package:organico/screens/home/view/home/info_page.dart';
 
 class MyRoutes {
   static final MyRoutes _instance = MyRoutes._init();
@@ -31,6 +32,8 @@ class MyRoutes {
         return route(const BottomNavigationPage());
       case "info_page":
         return route(const InfoPage());
+      case "coupon_page":
+        return route(const CouponPage());
     }
     return null;
   }
