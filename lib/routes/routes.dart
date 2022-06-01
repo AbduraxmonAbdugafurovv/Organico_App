@@ -6,6 +6,7 @@ import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/auth/view/sign_up.dart';
 import 'package:organico/screens/auth/view/splash_page.dart';
 import 'package:organico/screens/home/view/bottom_navigation.dart';
+import 'package:organico/screens/home/view/explore/explore.dart';
 import 'package:organico/screens/home/view/home/coupon_page.dart';
 import 'package:organico/screens/home/view/home/info_page.dart';
 import 'package:organico/screens/home/view/home/vegetables_page.dart';
@@ -37,6 +38,8 @@ class MyRoutes {
         return route(const CouponPage());
       case "vegetables":
         return route(const VegetablesPage());
+      case "explore":
+        return route(const ExplorePage());
     }
     return null;
   }
