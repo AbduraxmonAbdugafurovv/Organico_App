@@ -22,7 +22,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   ];
   @override
   Widget build(BuildContext context) {
-var pageindex =context.watch<HomeCubit>().pageIndex;
+    var pageindex = context.watch<HomeCubit>().pageIndex;
     return BaseView(
         viewModal: BottomNavigationPage,
         onPageBuildre: (context, widget) {
@@ -35,16 +35,25 @@ var pageindex =context.watch<HomeCubit>().pageIndex;
                   items: [
                     BottomNavigationBarItem(
                         label: "Home",
-                        icon: pageindex==0?SvgPicture.asset("assets/icons/select_home.svg"):SvgPicture.asset("assets/icons/home.svg")),
+                        icon: pageindex == 0
+                            ? SvgPicture.asset("assets/icons/select_home.svg")
+                            : SvgPicture.asset("assets/icons/home.svg")),
                     BottomNavigationBarItem(
                         label: "Explore",
-                        icon: pageindex==1?SvgPicture.asset("assets/icons/select_search.svg"):SvgPicture.asset("assets/icons/search_icon.svg")),
+                        icon: pageindex == 1
+                            ? SvgPicture.asset("assets/icons/select_search.svg")
+                            : SvgPicture.asset("assets/icons/search_icon.svg")),
                     BottomNavigationBarItem(
                         label: "Cart",
-                        icon: pageindex==2?SvgPicture.asset("assets/icons/select_cart.svg"):SvgPicture.asset("assets/icons/cart_icon.svg")),
+                        icon: pageindex == 2
+                            ? SvgPicture.asset("assets/icons/select_cart.svg")
+                            : SvgPicture.asset("assets/icons/cart_icon.svg")),
                     BottomNavigationBarItem(
                         label: "Profile",
-                        icon: pageindex==3?SvgPicture.asset("assets/icons/select_profile.svg"):SvgPicture.asset("assets/icons/profile.svg")),
+                        icon: pageindex == 3
+                            ? SvgPicture.asset(
+                                "assets/icons/select_profile.svg")
+                            : SvgPicture.asset("assets/icons/profile.svg")),
                   ],
                   currentIndex: context.watch<HomeCubit>().pageIndex,
                   onTap: (index) {

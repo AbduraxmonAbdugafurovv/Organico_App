@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: "bottom_navigation",
+          initialRoute: "info_page",
           onGenerateRoute: MyRoutes.instance.onGenerateRoute,
           navigatorKey: NavigationService.instance.navigatorKey,
         );
