@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organico/core/constant/constant.dart';
@@ -28,15 +26,20 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(
                 height: ScreenUtil().setHeight(65),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Profile",
-                        style: TextStyle(
-                            fontSize: FontConst.mediumFont + 2,
-                            fontWeight: FontWeight.w700)),
-                    SvgPicture.asset("assets/icons/notification.svg")
-                  ],
-                ),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Profile",
+                          style: TextStyle(
+                              fontSize: FontConst.mediumFont + 2,
+                              fontWeight: FontWeight.w700)),
+                      InkWell(
+                          child:
+                              SvgPicture.asset("assets/icons/notification.svg"),
+                          onTap: () {
+                            NavigationService.instance
+                                .pushNamed("notification");
+                          })
+                    ]),
               ),
               SizedBox(height: ScreenUtil().setHeight(28)),
               CircleAvatar(
@@ -58,7 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       fontWeight: FontWeight.w700,
                       color: ColorConst.grey)),
               SizedBox(height: ScreenUtil().setHeight(44)),
-              profileCategory("edit_profile", "Edit Profile", ""),
+              profileCategory("edit_profile", "Edit Profile", "edit_profile"),
               profileCategory("my_orders", "My orders", ""),
               profileCategory("my_wishlist", "My Wishlist", ""),
               profileCategory("address", "My Address", ""),
