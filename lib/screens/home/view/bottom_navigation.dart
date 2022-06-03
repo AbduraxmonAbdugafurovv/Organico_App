@@ -5,6 +5,7 @@ import 'package:organico/base/baseview.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/view/cart/my_cart.dart';
 import 'package:organico/screens/home/view/explore/explore.dart';
 import 'package:organico/screens/home/view/home/home_screen.dart';
 import 'package:organico/screens/home/view/profile/profile.dart';
@@ -20,7 +21,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   final pages = [
     const HomeSreen(),
     const ExplorePage(),
-    const Text("c"),
+    const MyCartPage(),
     const ProfilePage(),
   ];
   @override

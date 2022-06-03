@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FontConst {
-  static double extraSmallFont = 8.0;
-  static double smallFont = 12.0;
-  static double mediumFont = 16.0;
-  static double largeFont = 20.0;
-  static double extraLargeFont = 24.0;
+  static double extraSmallFont = ScreenUtil().setHeight(8.0);
+  static double smallFont = ScreenUtil().setHeight(12.0);
+  static double mediumFont = ScreenUtil().setHeight(16.0);
+  static double largeFont = ScreenUtil().setHeight(20.0);
+  static double extraLargeFont = ScreenUtil().setHeight(24.0);
 }
 
 class ColorConst {
