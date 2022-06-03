@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: "payment_method",
+          initialRoute: "bottom_navigation",
           onGenerateRoute: MyRoutes.instance.onGenerateRoute,
           navigatorKey: NavigationService.instance.navigatorKey,
         );

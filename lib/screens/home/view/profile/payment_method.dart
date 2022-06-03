@@ -32,9 +32,10 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                       SizedBox(height: ScreenUtil().setHeight(24)),
                       backAndTitleMethod("Payment Method"),
                       SizedBox(height: ScreenUtil().setHeight(28)),
-                      paymentMethods("assets/icons/credit_card.svg","Credit Card"),
+                      paymentMethods(
+                          "assets/icons/credit_card.svg", "Credit Card"),
                       SizedBox(height: ScreenUtil().setHeight(16)),
-                      paymentMethods("assets/icons/paypal.svg","Paypal"),
+                      paymentMethods("assets/icons/paypal.svg", "Paypal"),
                     ],
                   ),
                 ),
@@ -50,7 +51,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
         });
   }
 
-  InkWell paymentMethods(icon,type) {
+  InkWell paymentMethods(icon, type) {
     return InkWell(
       child: Container(
         height: ScreenUtil().setHeight(84),

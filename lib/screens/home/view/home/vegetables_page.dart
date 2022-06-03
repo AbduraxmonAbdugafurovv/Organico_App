@@ -52,7 +52,7 @@ class _VegetablesPageState extends State<VegetablesPage> {
                           SizedBox(
                               width: ScreenUtil().setHeight(80),
                               child: Image.asset("assets/images/veget.png")),
-                          SizedBox(height: ScreenUtil().setHeight(20)),
+                          SizedBox(height: ScreenUtil().setHeight(12)),
                           Text("Paprika",
                               style: TextStyle(
                                   fontSize: FontConst.mediumFont,
@@ -63,7 +63,8 @@ class _VegetablesPageState extends State<VegetablesPage> {
                                   fontSize: FontConst.mediumFont,
                                   color: ColorConst.grey,
                                   fontWeight: FontWeight.w400)),
-                          SizedBox(height: ScreenUtil().setHeight(15)),
+                                  Expanded(child: SizedBox()),
+
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -82,9 +83,9 @@ class _VegetablesPageState extends State<VegetablesPage> {
                                   child:
                                       SvgPicture.asset("assets/icons/plus.svg"),
                                 ),
-                              )
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                     ),

@@ -25,8 +25,11 @@ class _WishListState extends State<WishList> {
             SizedBox(height: ScreenUtil().setHeight(28)),
             Expanded(
               child: GridView.builder(
+                itemCount: 3,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                    mainAxisSpacing: 10, crossAxisCount: 2,
+                    crossAxisSpacing: 18
+                    ),
                 itemBuilder: (context, index) {
                   return Container(
                     width: ScreenUtil().setWidth(180),
@@ -37,7 +40,11 @@ class _WishListState extends State<WishList> {
                     child: Column(
                       children: [
                         Row(
-                          children: [Image.asset("assets/images/paprika.png")],
+                          children: [
+                            SizedBox(
+                                height: ScreenUtil().setHeight(75),
+                                child: Image.asset("assets/images/veget.png"))
+                          ],
                         )
                       ],
                     ),

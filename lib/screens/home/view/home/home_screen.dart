@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:organico/core/components/home/before_listtile.dart';
+import 'package:organico/core/components/home/grid_comp.dart';
 import 'package:organico/core/components/home/list_title.dart';
 import 'package:organico/core/components/sign/inputfield.dart';
 import 'package:organico/core/constant/constant.dart';
@@ -75,13 +77,20 @@ class _HomeSreenState extends State<HomeSreen> {
                         child: Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(25),
-                              child: Image.asset("assets/icons/broccoli.png"),
+                              padding: const EdgeInsets.all(10),
+                              child: SizedBox(
+                                  height: ScreenUtil().setHeight(59),
+                                  child: Image.asset(
+                                      "assets/images/broccoli.png")),
                             ),
-                            Text("Vegetables",
-                                style: TextStyle(
-                                    fontSize: FontConst.mediumFont,
-                                    fontWeight: FontWeight.w600)),
+                            const Expanded(child: SizedBox()),
+                            Expanded(
+                              child: Text("Vegetables",
+                                  style: TextStyle(
+                                      fontSize: FontConst.mediumFont,
+                                      fontWeight: FontWeight.w600)),
+                            ),
+                            const Expanded(child: SizedBox())
                           ],
                         ),
                       );
@@ -93,55 +102,55 @@ class _HomeSreenState extends State<HomeSreen> {
               SizedBox(
                 height: ScreenUtil().setHeight(242),
                 child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: EdgeInsets.symmetric(
-                            horizontal: ScreenUtil().setWidth(6)),
-                        height: ScreenUtil().setHeight(242),
-                        width: ScreenUtil().setHeight(196),
-                        decoration: BoxDecoration(
-                            color: ColorConst.purpleAccent,
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                  width: ScreenUtil().setHeight(80),
-                                  child:
-                                      Image.asset("assets/images/veget.png")),
-                              SizedBox(height: ScreenUtil().setHeight(20)),
-                              SizedBox(height: ScreenUtil().setHeight(10)),
-                              nameThing("Paprika"),
-                              SizedBox(height: ScreenUtil().setHeight(5)),
-                              marketName("Vegshop"),
-                              SizedBox(height: ScreenUtil().setHeight(24)),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  priceThing("\$4.99/Kg"),
-                                  Container(
-                                    height: ScreenUtil().setHeight(36),
-                                    width: ScreenUtil().setWidth(36),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: ColorConst.green),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(7.0),
-                                      child: SvgPicture.asset(
-                                          "assets/icons/plus.svg"),
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.symmetric(
+                          horizontal: ScreenUtil().setWidth(6)),
+                      height: ScreenUtil().setHeight(242),
+                      width: ScreenUtil().setHeight(196),
+                      decoration: BoxDecoration(
+                          color: ColorConst.purpleAccent,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                                width: ScreenUtil().setHeight(80),
+                                child: Image.asset("assets/images/veget.png")),
+                            SizedBox(height: ScreenUtil().setHeight(20)),
+                            SizedBox(height: ScreenUtil().setHeight(10)),
+                            nameThing("Paprika"),
+                            SizedBox(height: ScreenUtil().setHeight(5)),
+                            const Expanded(child: SizedBox()),
+                            marketName("Vegshop"),
+                            const Expanded(flex: 2, child: SizedBox()),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                priceThing("\$4.99/Kg"),
+                                Container(
+                                  height: ScreenUtil().setHeight(36),
+                                  width: ScreenUtil().setWidth(36),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: ColorConst.green),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(7.0),
+                                    child: SvgPicture.asset(
+                                        "assets/icons/plus.svg"),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
                         ),
-                      );
-                    }),
+                      ),
+                    );
+                  },
+                ),
               )
             ],
           ),
@@ -150,44 +159,5 @@ class _HomeSreenState extends State<HomeSreen> {
     );
   }
 
-  Text marketName(text) {
-    return Text(text,
-        style: TextStyle(
-            fontSize: FontConst.mediumFont,
-            color: ColorConst.grey,
-            fontWeight: FontWeight.w400));
-  }
 
-  Text priceThing(text) {
-    return Text(text,
-        style: TextStyle(
-            fontSize: FontConst.mediumFont, fontWeight: FontWeight.w600));
-  }
-
-  Text nameThing(text) {
-    return Text(text,
-        style: TextStyle(
-            fontSize: FontConst.mediumFont, fontWeight: FontWeight.w600));
-  }
-
-  Row beforeListCategoryHomeScreen(text, route) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(text,
-            style: TextStyle(
-                fontSize: FontConst.mediumFont + 2,
-                fontWeight: FontWeight.w700)),
-        InkWell(
-            child: Text(
-              "See all",
-              style: TextStyle(
-                  color: ColorConst.darkGrey, fontWeight: FontWeight.w400),
-            ),
-            onTap: () {
-              NavigationService.instance.pushNamed(route);
-            })
-      ],
-    );
-  }
 }

@@ -62,7 +62,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: ColorConst.grey)),
               SizedBox(height: ScreenUtil().setHeight(44)),
               profileCategory("edit_profile", "Edit Profile", "edit_profile"),
-              profileCategory("my_orders", "My orders", ""),
+              profileCategory("my_orders", "My orders", "my_order"),
               profileCategory("my_wishlist", "My Wishlist", ""),
               profileCategory("address", "My Address", ""),
               profileCategory("payment", "Payment Methos", ""),

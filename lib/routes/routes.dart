@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:organico/screens/auth/view/confirm_number.dart';
 import 'package:organico/screens/auth/view/forgot_password.dart';
@@ -11,6 +10,7 @@ import 'package:organico/screens/home/view/explore/explore.dart';
 import 'package:organico/screens/home/view/home/coupon_page.dart';
 import 'package:organico/screens/home/view/home/info_page.dart';
 import 'package:organico/screens/home/view/home/vegetables_page.dart';
+import 'package:organico/screens/home/view/home/wishlist.dart';
 import 'package:organico/screens/home/view/profile/change_password.dart';
 import 'package:organico/screens/home/view/profile/confirm_number_profile.dart';
 import 'package:organico/screens/home/view/profile/edit_profile.dart';
@@ -60,8 +60,10 @@ class MyRoutes {
         return route(const ChangePassword());
       case "my_address":
         return route(const MyAddressPage());
-        case "payment_method":
+      case "payment_method":
         return route(const PaymentMethodPage());
+      case "wishlist":
+        return route(const WishList());
     }
     return null;
   }

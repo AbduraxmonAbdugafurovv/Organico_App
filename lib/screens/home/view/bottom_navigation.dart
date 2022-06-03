@@ -5,6 +5,7 @@ import 'package:organico/base/baseview.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/view/explore/explore.dart';
 import 'package:organico/screens/home/view/home/home_screen.dart';
 import 'package:organico/screens/home/view/profile/profile.dart';
 
@@ -18,7 +19,7 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   final pages = [
     const HomeSreen(),
-    const Text("b"),
+    const ExplorePage(),
     const Text("c"),
     const ProfilePage(),
   ];
@@ -33,7 +34,10 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
               return Scaffold(
                 body: pages[context.watch<HomeCubit>().pageIndex],
                 bottomNavigationBar: BottomNavigationBar(
-                  selectedLabelStyle: TextStyle(color: ColorConst.black),
+                  type: BottomNavigationBarType.fixed,
+                  selectedLabelStyle: TextStyle(
+                    color: ColorConst.black,
+                  ),
                   items: [
                     BottomNavigationBarItem(
                         label: "Home",

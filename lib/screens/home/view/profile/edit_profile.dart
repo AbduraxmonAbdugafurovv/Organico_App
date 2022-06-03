@@ -26,81 +26,83 @@ class _EditProfileState extends State<EditProfile> {
           return BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
             if (state is HomeInitial) {
               return Scaffold(
-                body: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: ScreenUtil().setHeight(24),
-                      ),
-                      backAndTitleMethod("Adit Profile"),
-                      SizedBox(height: ScreenUtil().setHeight(32)),
-                      Center(
-                        child: SizedBox(
-                          height: ScreenUtil().setHeight(170),
-                          width: ScreenUtil().setWidth(170),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                child: CircleAvatar(
-                                  radius: ScreenUtil().setHeight(85),
+                body: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: ScreenUtil().setHeight(24),
+                        ),
+                        backAndTitleMethod("Adit Profile"),
+                        SizedBox(height: ScreenUtil().setHeight(32)),
+                        Center(
+                          child: SizedBox(
+                            height: ScreenUtil().setHeight(170),
+                            width: ScreenUtil().setWidth(170),
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  child: CircleAvatar(
+                                    radius: ScreenUtil().setHeight(85),
+                                  ),
                                 ),
-                              ),
-                              Positioned(
-                                  bottom: 2,
-                                  right: 0,
-                                  child: SvgPicture.asset(
-                                      "assets/icons/camera.svg")),
-                            ],
+                                Positioned(
+                                    bottom: 2,
+                                    right: 0,
+                                    child: SvgPicture.asset(
+                                        "assets/icons/camera.svg")),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: ScreenUtil().setHeight(32)),
-                      Form(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            textBeforeInput("Name"),
-                            SizedBox(height: ScreenUtil().setHeight(10)),
-                            TextFormField(
-                              controller:
-                                  context.watch<HomeCubit>().nameControlller,
-                              decoration: InputDecoration(
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: ScreenUtil().setWidth(16),
-                                      vertical: ScreenUtil().setHeight(13)),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        ScreenUtil().setHeight(100)),
-                                  )),
-                            ),
-                            SizedBox(height: ScreenUtil().setHeight(16)),
-                            textBeforeInput("Phone"),
-                            SizedBox(height: ScreenUtil().setHeight(10)),
-                            phoneInput(
-                                context.watch<HomeCubit>().phoneControlller),
-                            SizedBox(height: ScreenUtil().setHeight(16)),
-                            textBeforeInput("Address"),
-                            SizedBox(height: ScreenUtil().setHeight(10)),
-                            TextFormField(
-                              controller:
-                                  context.watch<HomeCubit>().addressControlller,
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(16))),
-                            ),
-                            SizedBox(height:ScreenUtil().setHeight(100) ,),
-                            InkWell(
-                              child: mainButton("Save"),
-                              onTap: () {
-
-                              },
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
+                        SizedBox(height: ScreenUtil().setHeight(32)),
+                        Form(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              textBeforeInput("Name"),
+                              SizedBox(height: ScreenUtil().setHeight(10)),
+                              TextFormField(
+                                controller:
+                                    context.watch<HomeCubit>().nameControlller,
+                                decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: ScreenUtil().setWidth(16),
+                                        vertical: ScreenUtil().setHeight(13)),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          ScreenUtil().setHeight(100)),
+                                    )),
+                              ),
+                              SizedBox(height: ScreenUtil().setHeight(16)),
+                              textBeforeInput("Phone"),
+                              SizedBox(height: ScreenUtil().setHeight(10)),
+                              phoneInput(
+                                  context.watch<HomeCubit>().phoneControlller),
+                              SizedBox(height: ScreenUtil().setHeight(16)),
+                              textBeforeInput("Address"),
+                              SizedBox(height: ScreenUtil().setHeight(10)),
+                              TextFormField(
+                                controller:
+                                    context.watch<HomeCubit>().addressControlller,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(16))),
+                              ),
+                              SizedBox(height:ScreenUtil().setHeight(100) ,),
+                              InkWell(
+                                child: mainButton("Save"),
+                                onTap: () {
+                
+                                },
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               );
