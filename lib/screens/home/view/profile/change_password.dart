@@ -73,15 +73,11 @@ class _ChangePasswordState extends State<ChangePassword> {
                                     .confirmpasswordController,
                                 "New Password Confirmation",
                                 true),
-                           
                           ],
                         ),
                       ),
                       SizedBox(height: ScreenUtil().setHeight(48)),
-                       InkWell(
-                              child: mainButton("Save Password"),
-                              onTap: () {},
-                            ),
+                      InkWell(child: mainButton("Save Password"), onTap: () {}),
                     ],
                   ),
                 ),

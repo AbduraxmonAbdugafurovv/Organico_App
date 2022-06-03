@@ -14,8 +14,10 @@ import 'package:organico/screens/home/view/home/vegetables_page.dart';
 import 'package:organico/screens/home/view/profile/change_password.dart';
 import 'package:organico/screens/home/view/profile/confirm_number_profile.dart';
 import 'package:organico/screens/home/view/profile/edit_profile.dart';
+import 'package:organico/screens/home/view/profile/my_address.dart';
 import 'package:organico/screens/home/view/profile/notification_setting.dart';
 import 'package:organico/screens/home/view/profile/notifixation.dart';
+import 'package:organico/screens/home/view/profile/payment_method.dart';
 
 class MyRoutes {
   static final MyRoutes _instance = MyRoutes._init();
@@ -56,6 +58,10 @@ class MyRoutes {
         return route(const ConfirmPhoneProfile());
       case "change_password":
         return route(const ChangePassword());
+      case "my_address":
+        return route(const MyAddressPage());
+        case "payment_method":
+        return route(const PaymentMethodPage());
     }
     return null;
   }
