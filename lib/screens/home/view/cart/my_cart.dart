@@ -149,7 +149,7 @@ class _MyCartPageState extends State<MyCartPage> {
           ),
         );
       } else if (state is HomeLoading) {
-        return circleAvatar();
+        return circular();
       } else {
         return const Text("Hato");
       }

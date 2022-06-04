@@ -37,16 +37,19 @@ class _WishListState extends State<WishList> {
                     decoration: BoxDecoration(
                         color: ColorConst.purpleAccent,
                         borderRadius: BorderRadius.circular(20)),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            SizedBox(
-                                height: ScreenUtil().setHeight(75),
-                                child: Image.asset("assets/images/veget.png"))
-                          ],
-                        )
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              SizedBox(
+                                  height: ScreenUtil().setHeight(75),
+                                  child: Image.asset("assets/images/veget.png"))
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },

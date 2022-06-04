@@ -12,6 +12,7 @@ import 'package:organico/screens/home/view/home/info_page.dart';
 import 'package:organico/screens/home/view/home/vegetables_page.dart';
 import 'package:organico/screens/home/view/home/wishlist.dart';
 import 'package:organico/screens/home/view/profile/change_password.dart';
+import 'package:organico/screens/home/view/profile/chat.dart';
 import 'package:organico/screens/home/view/profile/confirm_number_profile.dart';
 import 'package:organico/screens/home/view/profile/edit_profile.dart';
 import 'package:organico/screens/home/view/profile/my_address.dart';
@@ -64,6 +65,8 @@ class MyRoutes {
         return route(const PaymentMethodPage());
       case "wishlist":
         return route(const WishList());
+      case "chat":
+        return route(const ChatPage());
     }
     return null;
   }

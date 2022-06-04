@@ -1,7 +1,7 @@
 
   import 'package:flutter/material.dart';
 
-Center circleAvatar() {
+Center circular() {
     return const Center(
         child: CircularProgressIndicator.adaptive(),
       );
