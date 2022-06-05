@@ -10,8 +10,9 @@ class FontConst {
 }
 
 class ColorConst {
+  static Color yourSelfColor = const Color(0xff4D6FF0);
+  static Color mySelfColor = const Color(0xffab0023);
   static Color greyAccent = const Color.fromRGBO(234, 234, 234, 1);
-  static Color redColor = const Color(0xffab0023);
   static Color redAccentColor = const Color(0xffd33865);
   static Color purple = const Color(0xffd33865);
 
