@@ -6,13 +6,14 @@ import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/auth/view/sign_up.dart';
 import 'package:organico/screens/auth/view/splash_page.dart';
 import 'package:organico/screens/home/view/bottom_navigation.dart';
+import 'package:organico/screens/home/view/cart/cancel_page.dart';
 import 'package:organico/screens/home/view/cart/my_bag.dart';
 import 'package:organico/screens/home/view/explore/explore.dart';
 import 'package:organico/screens/home/view/home/coupon_page.dart';
 import 'package:organico/screens/home/view/home/info_page.dart';
 import 'package:organico/screens/home/view/home/vegetables_page.dart';
 import 'package:organico/screens/home/view/home/wishlist.dart';
-import 'package:organico/screens/home/view/profile/change_password.dart';
+import 'package:organico/screens/home/view/profile/changePasswords/change_password.dart';
 import 'package:organico/screens/home/view/profile/chat.dart';
 import 'package:organico/screens/home/view/profile/confirm_number_profile.dart';
 import 'package:organico/screens/home/view/profile/edit_profile.dart';
@@ -68,8 +69,10 @@ class MyRoutes {
         return route(const WishList());
       case "chat":
         return route(const ChatPage());
-        case "my_bag":
+      case "my_bag":
         return route(const MyBagPage());
+      case "cancel_page":
+        return route(const CancelPage());
     }
     return null;
   }

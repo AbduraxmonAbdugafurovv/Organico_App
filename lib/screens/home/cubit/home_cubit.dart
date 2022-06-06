@@ -16,7 +16,5 @@ class HomeCubit extends Cubit<HomeState> {
   final addressControlller =
       TextEditingController(text: "rgjnkfgnmdklfgndklfngldfkngdklfgndlkfgndklfgndklfndklfgndlkfngdlkgnldkfngdlkfgndlkgndlkgndf");
   final codeController = TextEditingController();
-  TextEditingController currentPasswordController = TextEditingController();
-  TextEditingController passwordConroller = TextEditingController();
-  TextEditingController confirmpasswordController = TextEditingController();
+  
 }

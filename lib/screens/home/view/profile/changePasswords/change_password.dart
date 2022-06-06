@@ -11,6 +11,8 @@ import 'package:organico/core/components/sign/text_before_input.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/view/profile/changePasswords/cubit/change_password_cubit.dart';
+import 'package:organico/screens/home/view/profile/changePasswords/state.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({Key? key}) : super(key: key);
@@ -25,8 +27,8 @@ class _ChangePasswordState extends State<ChangePassword> {
     return BaseView(
         viewModal: ChangePassword,
         onPageBuildre: (context, widget) {
-          return BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
-            if (state is HomeInitial) {
+          return BlocBuilder<ChangePasswordCubit, ChangePasswordState>(builder: (context, state) {
+            if (state is ChangePasswordInitialState) {
               return Scaffold(
                 body: Padding(
                   padding: EdgeInsets.symmetric(
@@ -51,7 +53,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                             inputfield(
                                 context,
                                 context
-                                    .watch<HomeCubit>()
+                                    .watch<ChangePasswordCubit>()
                                     .currentPasswordController,
                                 "Current Password",
                                 true),
@@ -60,7 +62,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                             SizedBox(height: ScreenUtil().setHeight(10)),
                             inputfield(
                                 context,
-                                context.watch<HomeCubit>().passwordConroller,
+                                context.watch<ChangePasswordCubit>().passwordConroller,
                                 "New Password",
                                 true),
                             SizedBox(height: ScreenUtil().setHeight(16)),
@@ -69,7 +71,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                             inputfield(
                                 context,
                                 context
-                                    .watch<HomeCubit>()
+                                    .watch<ChangePasswordCubit>()
                                     .confirmpasswordController,
                                 "New Password Confirmation",
                                 true),
@@ -82,7 +84,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                   ),
                 ),
               );
-            } else if (state is HomeLoading) {
+            } else if (state is ChangePAsswordLoadingState) {
               return const Center(
                 child: CircularProgressIndicator.adaptive(),
               );

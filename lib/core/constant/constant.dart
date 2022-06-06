@@ -29,8 +29,10 @@ class ColorConst {
   static Color green = Colors.green;
   static Color grey = Colors.grey;
   static Color red = Colors.red;
+  static Color cancelColor = const Color.fromRGBO(46, 204, 113, 0.15);
 
-  static  List colors = [
+  static List colors = [
+    const Color.fromRGBO(46, 204, 113, 0.15),
     const Color.fromRGBO(234, 129, 47, 0.15),
     const Color.fromRGBO(118, 178, 38, 0.15),
     const Color.fromRGBO(151, 3, 29, 0.15),
