@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:organico/base/baseview.dart';
 import 'package:organico/core/components/sign/back_and_title.dart';
 import 'package:organico/core/constant/constant.dart';
+import 'package:organico/core/widget/payment_methods.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
 
@@ -49,32 +50,5 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
             }
           });
         });
-  }
-
-  InkWell paymentMethods(icon, type) {
-    return InkWell(
-      child: Container(
-        height: ScreenUtil().setHeight(84),
-        decoration: BoxDecoration(
-            border: Border.all(color: ColorConst.greyAccent),
-            borderRadius: BorderRadius.circular(12)),
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Row(
-            children: [
-              SvgPicture.asset(icon),
-              SizedBox(width: ScreenUtil().setWidth(20)),
-              Text(type,
-                  style: TextStyle(
-                      fontSize: FontConst.mediumFont,
-                      fontWeight: FontWeight.w600)),
-              const Expanded(child: SizedBox()),
-              SvgPicture.asset("assets/icons/right.svg")
-            ],
-          ),
-        ),
-      ),
-      onTap: () {},
-    );
   }
 }

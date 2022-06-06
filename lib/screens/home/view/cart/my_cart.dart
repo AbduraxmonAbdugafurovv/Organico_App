@@ -5,8 +5,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:organico/core/components/main_button.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
+import 'package:organico/core/widget/cart/item.dart';
 import 'package:organico/core/widget/circle_avatar.dart';
 import 'package:organico/core/widget/shop.dart';
+import 'package:organico/data/data.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
 
@@ -48,72 +50,7 @@ class _MyCartPageState extends State<MyCartPage> {
                     child: Column(
                       children: [
                         shop(),
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: ScreenUtil().setHeight(10)),
-                          height: ScreenUtil().setHeight(114),
-                          width: ScreenUtil().setHeight(342),
-                          decoration: BoxDecoration(
-                            color: ColorConst.purpleAccent,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: ScreenUtil().setWidth(20),
-                                vertical: ScreenUtil().setHeight(13)),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                    child:
-                                        Image.asset("assets/images/veget.png")),
-                                SizedBox(width: ScreenUtil().setWidth(20)),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Text("Brocolli",
-                                          style: TextStyle(
-                                              fontSize: FontConst.mediumFont,
-                                              fontWeight: FontWeight.w600)),
-                                      Text(
-                                        "1 Kilo",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w400,
-                                            color: ColorConst.grey),
-                                      ),
-                                      Text("\$4.99 ",
-                                          style: TextStyle(
-                                              fontSize: FontConst.mediumFont,
-                                              fontWeight: FontWeight.w600))
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: ScreenUtil().setWidth(20)),
-                                Expanded(
-                                  flex: 2,
-                                  child: Row(
-                                    children: [
-                                      plusButtonMyCart(
-                                          "assets/icons/minus.svg"),
-                                      SizedBox(
-                                          width: ScreenUtil().setWidth(15)),
-                                      Text(
-                                        "1",
-                                        style: TextStyle(
-                                            fontSize: FontConst.mediumFont + 2,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                      SizedBox(
-                                          width: ScreenUtil().setWidth(15)),
-                                      plusButtonMyCart("assets/icons/plus.svg"),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                        item(),
                       ],
                     ),
                   ),
@@ -157,19 +94,4 @@ class _MyCartPageState extends State<MyCartPage> {
     });
   }
 
-
-  Container plusButtonMyCart(icon) {
-    return Container(
-      height: ScreenUtil().setHeight(32),
-      width: ScreenUtil().setWidth(32),
-      decoration: BoxDecoration(
-        color: ColorConst.green,
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(9.0),
-        child: SvgPicture.asset(icon),
-      ),
-    );
-  }
 }
