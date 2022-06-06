@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organico/core/components/main_button.dart';
 import 'package:organico/core/constant/constant.dart';
+import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/core/widget/circle_avatar.dart';
+import 'package:organico/core/widget/shop.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
 
@@ -45,16 +47,7 @@ class _MyCartPageState extends State<MyCartPage> {
                         vertical: ScreenUtil().setHeight(20)),
                     child: Column(
                       children: [
-                        Row(
-                          children: [
-                            SvgPicture.asset("assets/icons/icon_home.svg"),
-                            SizedBox(width: ScreenUtil().setWidth(16)),
-                            Text("Popey Shop - New york ",
-                                style: TextStyle(
-                                    fontSize: FontConst.mediumFont,
-                                    fontWeight: FontWeight.w600)),
-                          ],
-                        ),
+                        shop(),
                         Container(
                           margin: EdgeInsets.symmetric(
                               vertical: ScreenUtil().setHeight(10)),
@@ -125,6 +118,7 @@ class _MyCartPageState extends State<MyCartPage> {
                     ),
                   ),
                 ),
+                const Expanded(child: SizedBox()),
                 Row(
                   children: [
                     Column(
@@ -141,9 +135,16 @@ class _MyCartPageState extends State<MyCartPage> {
                                 fontWeight: FontWeight.w600)),
                       ],
                     ),
-                    // mainButton("Add to bag")
+                    SizedBox(width: ScreenUtil().setWidth(40)),
+                    Expanded(
+                        child: InkWell(
+                            child: mainButton("Add to bag"),
+                            onTap: () {
+                              NavigationService.instance.pushNamed("my_bag");
+                            }))
                   ],
                 ),
+                SizedBox(height: ScreenUtil().setHeight(39)),
               ],
             ),
           ),

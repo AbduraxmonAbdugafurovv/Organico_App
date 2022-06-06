@@ -7,6 +7,7 @@ import 'package:organico/core/components/home/list_title.dart';
 import 'package:organico/core/components/sign/inputfield.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
+import 'package:organico/data/data.dart';
 
 class HomeSreen extends StatefulWidget {
   const HomeSreen({Key? key}) : super(key: key);
@@ -102,8 +103,10 @@ class _HomeSreenState extends State<HomeSreen> {
               SizedBox(
                 height: ScreenUtil().setHeight(242),
                 child: ListView.builder(
+                  itemCount: Data.data.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    var data = Data.data;
                     return Container(
                       margin: EdgeInsets.symmetric(
                           horizontal: ScreenUtil().setWidth(6)),
@@ -119,18 +122,18 @@ class _HomeSreenState extends State<HomeSreen> {
                           children: [
                             SizedBox(
                                 width: ScreenUtil().setHeight(80),
-                                child: Image.asset("assets/images/veget.png")),
+                                child: Image.asset(data[index].img!)),
                             SizedBox(height: ScreenUtil().setHeight(20)),
                             SizedBox(height: ScreenUtil().setHeight(10)),
-                            nameThing("Paprika"),
+                            nameThing(data[index].name),
                             SizedBox(height: ScreenUtil().setHeight(5)),
                             const Expanded(child: SizedBox()),
-                            marketName("Vegshop"),
+                            marketName(data[index].shop),
                             const Expanded(flex: 2, child: SizedBox()),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                priceThing("\$4.99/Kg"),
+                                priceThing(data[index].price),
                                 Container(
                                   height: ScreenUtil().setHeight(36),
                                   width: ScreenUtil().setWidth(36),
@@ -138,7 +141,7 @@ class _HomeSreenState extends State<HomeSreen> {
                                       borderRadius: BorderRadius.circular(10),
                                       color: ColorConst.green),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(7.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     child: SvgPicture.asset(
                                         "assets/icons/plus.svg"),
                                   ),

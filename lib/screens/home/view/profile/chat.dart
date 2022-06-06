@@ -121,7 +121,7 @@ class _ChatPageState extends State<ChatPage> {
                       _textEditingController.clear();
                     });
                   },
-                )
+                ),
               ],
             ),
             SizedBox(

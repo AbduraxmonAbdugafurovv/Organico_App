@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organico/model/model.dart';
 
 class FontConst {
   static double extraSmallFont = ScreenUtil().setHeight(8.0);
@@ -19,6 +20,7 @@ class ColorConst {
   static Color purpleAccent = const Color.fromRGBO(170, 0, 35, 0.15);
   static Color blueWhite = const Color(0xffE9F0F7);
   static Color darkGrey = const Color(0xff696974);
+
   static Color kPimaryColor = const Color(0xffAA0023);
   static Color white = Colors.white;
   static Color black = Colors.black;
@@ -27,4 +29,12 @@ class ColorConst {
   static Color green = Colors.green;
   static Color grey = Colors.grey;
   static Color red = Colors.red;
+
+  static  List colors = [
+    const Color.fromRGBO(234, 129, 47, 0.15),
+    const Color.fromRGBO(118, 178, 38, 0.15),
+    const Color.fromRGBO(151, 3, 29, 0.15),
+    const Color.fromRGBO(233, 176, 79, 0.15),
+    const Color.fromRGBO(63, 125, 60, 0.15)
+  ];
 }
