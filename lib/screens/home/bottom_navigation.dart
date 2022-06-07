@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organico/base/baseview.dart';
 import 'package:organico/core/constant/constant.dart';
+import 'package:organico/screens/home/cart/my_cart.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/screens/home/explore/explore.dart';
+import 'package:organico/screens/home/home/home_screen.dart';
+import 'package:organico/screens/home/profile/profile.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
-import 'package:organico/screens/home/view/cart/my_cart.dart';
-import 'package:organico/screens/home/view/explore/explore.dart';
-import 'package:organico/screens/home/view/home/home_screen.dart';
-import 'package:organico/screens/home/view/profile/profile.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({Key? key}) : super(key: key);

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:organico/base/baseview.dart';
 import 'package:organico/core/components/sign/back_and_title.dart';
-import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/widget/payment_methods.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';

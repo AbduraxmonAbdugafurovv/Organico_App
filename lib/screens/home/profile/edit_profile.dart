@@ -106,7 +106,7 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ),
               );
-              ;
+              
             } else if (state is HomeError) {
               return const Center(child: CircularProgressIndicator.adaptive());
             } else {

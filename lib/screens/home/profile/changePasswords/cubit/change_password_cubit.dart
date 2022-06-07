@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:organico/screens/home/view/profile/changePasswords/state.dart';
+import 'package:organico/screens/home/profile/changePasswords/state/state.dart';
 
 class ChangePasswordCubit extends Cubit<ChangePasswordState> {
   ChangePasswordCubit() : super(ChangePasswordInitialState());

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:organico/model/model.dart';
 
 class FontConst {
   static double extraSmallFont = ScreenUtil().setHeight(8.0);
@@ -32,6 +31,7 @@ class ColorConst {
   static Color cancelColor = const Color.fromRGBO(46, 204, 113, 0.15);
 
   static List colors = [
+    const Color.fromRGBO(170, 0, 35, 0.15),
     const Color.fromRGBO(46, 204, 113, 0.15),
     const Color.fromRGBO(234, 129, 47, 0.15),
     const Color.fromRGBO(118, 178, 38, 0.15),

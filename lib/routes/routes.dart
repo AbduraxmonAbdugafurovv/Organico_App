@@ -5,22 +5,22 @@ import 'package:organico/screens/auth/view/reset_pass.dart';
 import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/auth/view/sign_up.dart';
 import 'package:organico/screens/auth/view/splash_page.dart';
-import 'package:organico/screens/home/view/bottom_navigation.dart';
-import 'package:organico/screens/home/view/cart/cancel_page.dart';
-import 'package:organico/screens/home/view/cart/my_bag.dart';
-import 'package:organico/screens/home/view/explore/explore.dart';
-import 'package:organico/screens/home/view/home/coupon_page.dart';
-import 'package:organico/screens/home/view/home/info_page.dart';
-import 'package:organico/screens/home/view/home/vegetables_page.dart';
-import 'package:organico/screens/home/view/home/wishlist.dart';
-import 'package:organico/screens/home/view/profile/changePasswords/change_password.dart';
-import 'package:organico/screens/home/view/profile/chat.dart';
-import 'package:organico/screens/home/view/profile/confirm_number_profile.dart';
-import 'package:organico/screens/home/view/profile/edit_profile.dart';
-import 'package:organico/screens/home/view/profile/my_address.dart';
-import 'package:organico/screens/home/view/profile/notification_setting.dart';
-import 'package:organico/screens/home/view/profile/notifixation.dart';
-import 'package:organico/screens/home/view/profile/payment_method.dart';
+import 'package:organico/screens/home/bottom_navigation.dart';
+import 'package:organico/screens/home/cart/cancel_page.dart';
+import 'package:organico/screens/home/cart/my_bag.dart';
+import 'package:organico/screens/home/explore/explore.dart';
+import 'package:organico/screens/home/home/coupon_page.dart';
+import 'package:organico/screens/home/home/info_page.dart';
+import 'package:organico/screens/home/home/vegetables_page.dart';
+import 'package:organico/screens/home/home/wishlist.dart';
+import 'package:organico/screens/home/profile/changePasswords/change_password.dart';
+import 'package:organico/screens/home/profile/chat/view/chat.dart';
+import 'package:organico/screens/home/profile/confirm_number_profile.dart';
+import 'package:organico/screens/home/profile/edit_profile.dart';
+import 'package:organico/screens/home/profile/my_address.dart';
+import 'package:organico/screens/home/profile/notification_setting.dart';
+import 'package:organico/screens/home/profile/notifixation.dart';
+import 'package:organico/screens/home/profile/payment_method.dart';
 
 class MyRoutes {
   static final MyRoutes _instance = MyRoutes._init();
@@ -28,6 +28,7 @@ class MyRoutes {
   MyRoutes._init();
 
   Route? onGenerateRoute(RouteSettings settings) {
+    var args = settings.arguments;
     switch (settings.name) {
       case "splash":
         return route(const SplashPage());

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:organico/core/components/main_button.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/core/widget/cart/item.dart';
 import 'package:organico/core/widget/circle_avatar.dart';
 import 'package:organico/core/widget/shop.dart';
-import 'package:organico/data/data.dart';
+
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/state/hone_state.dart';
 

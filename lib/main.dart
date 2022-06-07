@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:organico/core/constant/theme_constant.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/routes/routes.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/screens/home/profile/changePasswords/cubit/change_password_cubit.dart';
+import 'package:organico/screens/home/profile/chat/cubit/chat_cubit.dart';
 
 void main() async {
   runApp(
     MultiBlocProvider(providers: [
       BlocProvider(create: (context) => AuthCubit()),
-      BlocProvider(create: (context) => HomeCubit())
+      BlocProvider(create: (context) => HomeCubit()),
+      BlocProvider(create: (context) => ChatCubit()),
+      BlocProvider(create: (context) => ChangePasswordCubit()),
     ], child: const MyApp()),
   );
 }
@@ -26,12 +31,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          title: 'Flutter',
+          title: 'Organico',
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          initialRoute: "cancel_page",
+          theme: theme(),
+          initialRoute: "bottom_navigation",
           onGenerateRoute: MyRoutes.instance.onGenerateRoute,
           navigatorKey: NavigationService.instance.navigatorKey,
         );

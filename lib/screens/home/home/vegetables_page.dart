@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:organico/core/components/home/plus_minus_buttons.dart';
 import 'package:organico/core/components/sign/back_and_title.dart';
 import 'package:organico/core/constant/constant.dart';
 
@@ -63,7 +62,7 @@ class _VegetablesPageState extends State<VegetablesPage> {
                                   fontSize: FontConst.mediumFont,
                                   color: ColorConst.grey,
                                   fontWeight: FontWeight.w400)),
-                                  Expanded(child: SizedBox()),
+                                  const  Expanded(child: SizedBox()),
 
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

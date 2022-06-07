@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organico/base/baseview.dart';
@@ -9,10 +7,13 @@ import 'package:organico/core/components/sign/back_and_title.dart';
 import 'package:organico/core/components/sign/inputfield.dart';
 import 'package:organico/core/components/sign/text_before_input.dart';
 import 'package:organico/core/constant/constant.dart';
-import 'package:organico/screens/home/cubit/home_cubit.dart';
-import 'package:organico/screens/home/state/hone_state.dart';
-import 'package:organico/screens/home/view/profile/changePasswords/cubit/change_password_cubit.dart';
-import 'package:organico/screens/home/view/profile/changePasswords/state.dart';
+import 'package:organico/core/widget/circle_avatar.dart';
+import 'package:organico/screens/home/profile/changePasswords/cubit/change_password_cubit.dart';
+import 'package:organico/screens/home/profile/changePasswords/state/state.dart';
+
+
+
+
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({Key? key}) : super(key: key);
@@ -27,7 +28,8 @@ class _ChangePasswordState extends State<ChangePassword> {
     return BaseView(
         viewModal: ChangePassword,
         onPageBuildre: (context, widget) {
-          return BlocBuilder<ChangePasswordCubit, ChangePasswordState>(builder: (context, state) {
+          return BlocBuilder<ChangePasswordCubit, ChangePasswordState>(
+              builder: (context, state) {
             if (state is ChangePasswordInitialState) {
               return Scaffold(
                 body: Padding(
@@ -62,7 +64,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                             SizedBox(height: ScreenUtil().setHeight(10)),
                             inputfield(
                                 context,
-                                context.watch<ChangePasswordCubit>().passwordConroller,
+                                context
+                                    .watch<ChangePasswordCubit>()
+                                    .passwordConroller,
                                 "New Password",
                                 true),
                             SizedBox(height: ScreenUtil().setHeight(16)),
@@ -85,9 +89,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 ),
               );
             } else if (state is ChangePAsswordLoadingState) {
-              return const Center(
-                child: CircularProgressIndicator.adaptive(),
-              );
+              return circular();
             } else {
               return const Text("Hato");
             }
