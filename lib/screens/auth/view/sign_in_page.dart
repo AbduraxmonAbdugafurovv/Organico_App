@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organico/base/baseview.dart';
+import 'package:organico/cheking_page.dart';
 import 'package:organico/core/components/main_button.dart';
 import 'package:organico/core/components/sign/inputfield.dart';
 import 'package:organico/core/constant/constant.dart';
@@ -10,6 +12,7 @@ import 'package:organico/core/extension/context_extension.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/state/auth_state.dart';
+import 'package:organico/widgets/snackbar_widget.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -126,7 +129,7 @@ class _SignInPageState extends State<SignInPage> {
                       InkWell(
                         child: mainButton("Sign In"),
                         onTap: () {
-                          NavigationService.instance.pushNamed("sign_up");
+                          readFromdb(phoneNumberController.text, passwordController.text);
                         },
                       ),
                     ],
@@ -140,5 +143,27 @@ class _SignInPageState extends State<SignInPage> {
         });
       },
     );
+  }
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  Future readFromdb(String phoneNumberController,String passwordController ) async {
+    try {
+      var data = await firestore.collection("users").get();
+      for (var item in data.docs) {
+        if(item.id.toString() == phoneNumberController){
+          debugPrint(item.id.toString());
+          if(item["code"].toString() == passwordController){ 
+            debugPrint(item["code"].toString());
+            return Navigator.push(context, MaterialPageRoute(builder: (_)=>CheckingPage()));
+            
+          }else{
+           return SnackBarWidget.showSnackBar(context, "Incorrect Password", Colors.red);
+          }
+        }else{
+           return Navigator.pushNamed(context, "sign_up");
+        }
+      }
+    } catch (e) {
+      SnackBarWidget.showSnackBar(context, "Error while read: $e", Colors.blue);
+    }
   }
 }
