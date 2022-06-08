@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organico/base/baseview.dart';
 import 'package:organico/core/widget/circle_avatar.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
-import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/state/home_state.dart';
 
 class OrderStatusReseivedPage extends StatefulWidget {
   const OrderStatusReseivedPage({Key? key}) : super(key: key);

@@ -13,6 +13,7 @@ import 'package:organico/screens/home/explore/explore.dart';
 import 'package:organico/screens/home/home/coupon_page.dart';
 import 'package:organico/screens/home/home/info/info_page.dart';
 import 'package:organico/screens/home/home/categies_page.dart.dart';
+import 'package:organico/screens/home/home/search/search_page.dart';
 import 'package:organico/screens/home/home/wishlist.dart';
 import 'package:organico/screens/home/profile/changePasswords/change_password.dart';
 import 'package:organico/screens/home/profile/chat/view/chat.dart';
@@ -50,7 +51,7 @@ class MyRoutes {
       case "coupon_page":
         return route(const CouponPage());
       case "categories":
-        return route( CategoriesPage(listCategory: args as List<Model>,));
+        return route(CategoriesPage(listCategory: args as List<Model>));
       case "explore":
         return route(const ExplorePage());
       case "notification":
@@ -70,11 +71,13 @@ class MyRoutes {
       case "wishlist":
         return route(const WishList());
       case "chat":
-        return route(ChatPage(info: args as Model,));
+        return route(ChatPage(info: args as Model));
       case "my_bag":
         return route(const MyBagPage());
       case "cancel_page":
         return route(const CancelPage());
+      case "search":
+        return route(const SearchPage());
     }
     return null;
   }

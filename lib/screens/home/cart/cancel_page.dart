@@ -6,7 +6,7 @@ import 'package:organico/core/components/sign/back_and_title.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/widget/circle_avatar.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
-import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/state/home_state.dart';
 
 class CancelPage extends StatefulWidget {
   const CancelPage({Key? key}) : super(key: key);

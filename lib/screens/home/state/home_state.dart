@@ -10,3 +10,6 @@ class HomeLoading extends HomeState {
 class HomeError extends HomeState {
   HomeError();
 }
+class HomeSearch extends HomeState {
+  HomeSearch();
+}

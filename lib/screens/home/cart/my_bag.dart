@@ -12,7 +12,7 @@ import 'package:organico/core/widget/coupon.dart';
 import 'package:organico/core/widget/payment_methods.dart';
 import 'package:organico/core/widget/shop.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
-import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/state/home_state.dart';
 
 class MyBagPage extends StatefulWidget {
   const MyBagPage({Key? key}) : super(key: key);

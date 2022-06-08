@@ -8,7 +8,7 @@ import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/explore/explore.dart';
 import 'package:organico/screens/home/home/home_screen.dart';
 import 'package:organico/screens/home/profile/profile.dart';
-import 'package:organico/screens/home/state/hone_state.dart';
+import 'package:organico/screens/home/state/home_state.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({Key? key}) : super(key: key);
