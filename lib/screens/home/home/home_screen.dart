@@ -70,7 +70,9 @@ class _HomeSreenState extends State<HomeSreen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        categoriy("assets/images/broccoli.svg", "Vegetables"),
+                        InkWell(child: categoriy("assets/images/broccoli.svg", "Vegetables"),onTap: (){
+                          NavigationService.instance.pushNamed("categories",argument: Data.data[0]);
+                        },),
                         categoriy("assets/images/banana.svg", "Fruits"),
                         categoriy("assets/images/broccoli.svg", "Vegetables"),
                       ],
@@ -86,7 +88,7 @@ class _HomeSreenState extends State<HomeSreen> {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return InkWell(child: bestProduct(index),onTap: (){
-                      
+                      NavigationService.instance.pushNamed("info_page",argument:vegetable[index]);
                     },);
                   },
                 ),

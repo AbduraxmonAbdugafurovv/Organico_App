@@ -3,15 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:organico/core/components/sign/back_and_title.dart';
 import 'package:organico/core/constant/constant.dart';
+import 'package:organico/model/model.dart';
 
-class VegetablesPage extends StatefulWidget {
-  const VegetablesPage({Key? key}) : super(key: key);
+class CategoriesPage extends StatefulWidget {
+  List<Model> listCategory;
+ CategoriesPage({required this.listCategory, Key? key}) : super(key: key);
 
   @override
-  State<VegetablesPage> createState() => _VegetablesPageState();
+  State<CategoriesPage> createState() => _CategoriesPageState();
 }
 
-class _VegetablesPageState extends State<VegetablesPage> {
+class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +38,7 @@ class _VegetablesPageState extends State<VegetablesPage> {
                     mainAxisSpacing: 28,
                     crossAxisSpacing: 22,
                     crossAxisCount: 2),
-                itemCount: 5,
+                itemCount: widget.listCategory.length,
                 itemBuilder: (context, index) {
                   return Container(
                     decoration: BoxDecoration(
@@ -50,27 +52,30 @@ class _VegetablesPageState extends State<VegetablesPage> {
                         children: [
                           SizedBox(
                               width: ScreenUtil().setHeight(80),
-                              child: Image.asset("assets/images/veget.png")),
+                              child: SvgPicture.asset(widget.listCategory[index].img.toString())),
                           SizedBox(height: ScreenUtil().setHeight(12)),
-                          Text("Paprika",
+                          Text(widget.listCategory[index].name.toString(),
                               style: TextStyle(
                                   fontSize: FontConst.mediumFont,
                                   fontWeight: FontWeight.w600)),
                           SizedBox(height: ScreenUtil().setHeight(4)),
-                          Text("Vegshop",
-                              style: TextStyle(
-                                  fontSize: FontConst.mediumFont,
-                                  color: ColorConst.grey,
-                                  fontWeight: FontWeight.w400)),
+                          Expanded(
+                            child: Text(widget.listCategory[index].shop.toString(),
+                                style: TextStyle(
+                                    fontSize: FontConst.mediumFont-2,
+                                    color: ColorConst.grey,
+                                    fontWeight: FontWeight.w400)),
+                          ),
                                   const  Expanded(child: SizedBox()),
 
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("\$4.99/Kg",
+                              Text(widget.listCategory[index].price.toString(),
                                   style: TextStyle(
                                       fontSize: FontConst.mediumFont,
                                       fontWeight: FontWeight.w600)),
+
                               Container(
                                 height: ScreenUtil().setHeight(36),
                                 width: ScreenUtil().setWidth(36),
@@ -78,7 +83,7 @@ class _VegetablesPageState extends State<VegetablesPage> {
                                     borderRadius: BorderRadius.circular(10),
                                     color: ColorConst.green),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(7.0),
+                                  padding: const EdgeInsets.all(9.0),
                                   child:
                                       SvgPicture.asset("assets/icons/plus.svg"),
                                 ),

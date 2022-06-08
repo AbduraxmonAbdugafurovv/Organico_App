@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,11 +8,13 @@ import 'package:organico/core/components/sign/back_and_title.dart';
 import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/widget/circle_avatar.dart';
 import 'package:organico/model/message_model.dart';
+import 'package:organico/model/model.dart';
 import 'package:organico/screens/home/profile/chat/cubit/chat_cubit.dart';
 import 'package:organico/screens/home/profile/chat/state/chat_state.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({Key? key}) : super(key: key);
+  Model info;
+  ChatPage({required this.info, Key? key}) : super(key: key);
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -25,7 +25,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return BaseView(
         viewModal: ChatPage,
-        onPageBuildre: (context, widget) {
+        onPageBuildre: (context, widge) {
           return BlocBuilder<ChatCubit, ChatState>(builder: (context, state) {
             if (state is ChatInitialState) {
               return Scaffold(
@@ -33,9 +33,10 @@ class _ChatPageState extends State<ChatPage> {
                   padding: EdgeInsets.symmetric(
                       horizontal: ScreenUtil().setWidth(20)),
                   child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: ScreenUtil().setHeight(24)),
-                      backAndTitleMethod("Popey shop - New Yokr"),
+                      backAndTitleMethod(widget.info.shop),
                       SizedBox(height: ScreenUtil().setHeight(28)),
                       Container(
                         width: double.infinity,
@@ -48,17 +49,18 @@ class _ChatPageState extends State<ChatPage> {
                           padding: const EdgeInsets.all(20),
                           child: Row(
                             children: [
-                              SvgPicture.asset("assets/images/broccoli.svg"),
+                              SvgPicture.asset(widget.info.img.toString()),
                               SizedBox(width: ScreenUtil().setWidth(20)),
                               Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Broccoli",
+                                  Text(widget.info.name.toString(),
                                       style: TextStyle(
                                           fontSize: FontConst.mediumFont,
                                           fontWeight: FontWeight.w600)),
                                   SizedBox(height: ScreenUtil().setHeight(5)),
                                   Text(
-                                    "Popey shop",
+                                    widget.info.shop.toString(),
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         color: ColorConst.grey),
@@ -67,7 +69,7 @@ class _ChatPageState extends State<ChatPage> {
                               ),
                               const Expanded(child: SizedBox()),
                               Text(
-                                "\$4.99 /Kg",
+                                widget.info.price.toString(),
                                 style: TextStyle(
                                     fontSize: FontConst.mediumFont,
                                     fontWeight: FontWeight.w600),
@@ -181,7 +183,9 @@ class _ChatPageState extends State<ChatPage> {
                                         date: DateTime.now(),
                                         isSentByMe: true),
                                   );
-                                  context.read<ChatCubit>().clear(context.read<ChatCubit>().textEditingController);
+                              context.read<ChatCubit>().clear(context
+                                  .read<ChatCubit>()
+                                  .textEditingController);
                             },
                           ),
                         ],

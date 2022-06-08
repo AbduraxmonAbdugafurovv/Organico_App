@@ -6,8 +6,8 @@ class NavigationService {
   NavigationService._init();
   GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-  Future<dynamic> pushNamed(routeName) {
-    return navigatorKey.currentState!.pushNamed(routeName);
+  Future<dynamic> pushNamed(routeName,{argument}) {
+    return navigatorKey.currentState!.pushNamed(routeName,arguments:argument );
   }
 
   void pop() {

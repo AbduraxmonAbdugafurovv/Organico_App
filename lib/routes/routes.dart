@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:organico/model/model.dart';
 import 'package:organico/screens/auth/view/confirm_number.dart';
 import 'package:organico/screens/auth/view/forgot_password.dart';
 import 'package:organico/screens/auth/view/reset_pass.dart';
@@ -11,7 +12,7 @@ import 'package:organico/screens/home/cart/my_bag.dart';
 import 'package:organico/screens/home/explore/explore.dart';
 import 'package:organico/screens/home/home/coupon_page.dart';
 import 'package:organico/screens/home/home/info_page.dart';
-import 'package:organico/screens/home/home/vegetables_page.dart';
+import 'package:organico/screens/home/home/categies_page.dart.dart';
 import 'package:organico/screens/home/home/wishlist.dart';
 import 'package:organico/screens/home/profile/changePasswords/change_password.dart';
 import 'package:organico/screens/home/profile/chat/view/chat.dart';
@@ -45,11 +46,11 @@ class MyRoutes {
       case "bottom_navigation":
         return route(const BottomNavigationPage());
       case "info_page":
-        return route(const InfoPage());
+        return route(InfoPage(info: args as Model));
       case "coupon_page":
         return route(const CouponPage());
-      case "vegetables":
-        return route(const VegetablesPage());
+      case "categories":
+        return route( CategoriesPage(listCategory: args as List<Model>,));
       case "explore":
         return route(const ExplorePage());
       case "notification":
@@ -69,7 +70,7 @@ class MyRoutes {
       case "wishlist":
         return route(const WishList());
       case "chat":
-        return route(const ChatPage());
+        return route(ChatPage(info: args as Model,));
       case "my_bag":
         return route(const MyBagPage());
       case "cancel_page":
