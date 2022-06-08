@@ -7,6 +7,7 @@ import 'package:organico/routes/routes.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/screens/home/home/info/cubit_info.dart';
 import 'package:organico/screens/home/profile/changePasswords/cubit/change_password_cubit.dart';
 import 'package:organico/screens/home/profile/chat/cubit/chat_cubit.dart';
 
@@ -17,6 +18,7 @@ void main() async {
       BlocProvider(create: (context) => HomeCubit()),
       BlocProvider(create: (context) => ChatCubit()),
       BlocProvider(create: (context) => ChangePasswordCubit()),
+      BlocProvider(create: (context)=>InfoCubit())
     ], child: const MyApp()),
   );
 }

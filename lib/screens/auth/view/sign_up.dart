@@ -21,8 +21,6 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
-    bool obsecureText1 = context.watch<AuthCubit>().obsecureText1;
-    bool obsecureText2 = context.watch<AuthCubit>().obsecureText2;
     bool isCheked = context.watch<AuthCubit>().isCheked;
     TextEditingController passwordController =
         context.watch<AuthCubit>().passwordConroller;

@@ -12,6 +12,7 @@ import 'package:organico/model/model.dart';
 import 'package:organico/screens/home/profile/chat/cubit/chat_cubit.dart';
 import 'package:organico/screens/home/profile/chat/state/chat_state.dart';
 
+// ignore: must_be_immutable
 class ChatPage extends StatefulWidget {
   Model info;
   ChatPage({required this.info, Key? key}) : super(key: key);

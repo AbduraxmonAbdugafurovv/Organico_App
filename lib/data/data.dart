@@ -4,6 +4,7 @@ class Data {
   static List <List<Model>> data = [
     [
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/broccoli.svg",
           name: "Brocolli",
@@ -13,6 +14,7 @@ class Data {
           timeDelivery: "20 - 30",
           category: "Vegetable"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/paprika.svg",
           name: "Paprika",
@@ -22,6 +24,7 @@ class Data {
           timeDelivery: "25 - 30",
           category: "Vegetable"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/lettuce.svg",
           name: "Lettuce",
@@ -31,6 +34,7 @@ class Data {
           timeDelivery: "20 - 40",
           category: "Vegetable"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/potato.svg",
           name: "Potato",
@@ -40,6 +44,7 @@ class Data {
           timeDelivery: "10 - 20",
           category: "Vegetable"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/carrot.svg",
           name: "Carrot",
@@ -49,6 +54,7 @@ class Data {
           timeDelivery: "15 - 30",
           category: "Vegetable"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/onion.svg",
           name: "Banana",
@@ -60,6 +66,7 @@ class Data {
     ],
     [
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/apple.svg",
           name: "Apple",
@@ -69,6 +76,7 @@ class Data {
           timeDelivery: "10 - 15",
           category: "Fruits"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/pear.svg",
           name: "Pear",
@@ -78,6 +86,7 @@ class Data {
           timeDelivery: "10 - 15",
           category: "Fruits"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/kiwi.svg",
           name: "Kiwi",
@@ -87,6 +96,7 @@ class Data {
           timeDelivery: "10 - 15",
           category: "Fruits"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/lemon.svg",
           name: "Lemon",
@@ -96,6 +106,7 @@ class Data {
           timeDelivery: "10 - 15",
           category: "Fruits"),
       Model(
+        wishlist: false,
           count: 1,
           img: "assets/images/palm.svg",
           name: "Date palm",
