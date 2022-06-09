@@ -91,7 +91,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
                 ),
               );
             } else {
-              return const Text("Hato cubitda");
+              return const Text("Hato confirm cubitda");
             }
           },
         );

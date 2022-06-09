@@ -79,7 +79,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                 );
               } else {
-                return const Text("Hato state daa");
+                return const Text("Hato forgot state daa");
               }
             },
           );

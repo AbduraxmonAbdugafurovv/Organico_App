@@ -135,7 +135,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
             );
           } else {
-            return const Text("Hato Cubitda");
+            return const Text("Hato sign in Cubitda");
           }
         });
       },

@@ -44,7 +44,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                 child: CircularProgressIndicator.adaptive(),
               );
             } else {
-              return const Text("Hato");
+              return const Text("Hato payment method cubit ");
             }
           });
         });

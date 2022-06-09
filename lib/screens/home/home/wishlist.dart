@@ -89,7 +89,7 @@ class _WishListState extends State<WishList> {
             } else if (state is InfoLoading) {
               return circular();
             } else {
-              return const Text("Hato");
+              return const Text("Hato wishlist cubit ");
             }
           });
         });

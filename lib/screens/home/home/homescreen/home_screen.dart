@@ -8,7 +8,12 @@ import 'package:organico/core/components/sign/inputfield.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/core/widget/bottom/best_product.dart';
 import 'package:organico/core/widget/bottom/category.dart';
+import 'package:organico/core/widget/circle_avatar.dart';
 import 'package:organico/data/data.dart';
+import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/screens/home/home/homescreen/cubit_homescren.dart';
+import 'package:organico/screens/home/home/homescreen/state_homescreen.dart';
+import 'package:organico/screens/home/home/search_page.dart';
 import 'package:organico/screens/home/state/home_state.dart';
 
 class HomeSreen extends StatefulWidget {
@@ -23,8 +28,8 @@ class _HomeSreenState extends State<HomeSreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder(builder: (context, state) {
-      if (state is HomeInitial) {
+    return BlocBuilder<HomeScreenCubit,HomeScreenState>(builder: (context, state) {
+      if (state is HomescreenInitial) {
         return Scaffold(
           body: SingleChildScrollView(
             child: Padding(
@@ -35,6 +40,7 @@ class _HomeSreenState extends State<HomeSreen> {
                     height: ScreenUtil().setHeight(94),
                   ),
                   TextFormField(
+                    controller: context.watch<HomeScreenCubit>().searchController,
                     decoration: InputDecoration(
                         filled: true,
                         hintText: "Search anything here",
@@ -52,6 +58,9 @@ class _HomeSreenState extends State<HomeSreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(100),
                         )),
+                        onTap: (){
+                          context.read<HomeScreenCubit>().moveToSearchPage();
+                        },
                   ),
                   SizedBox(height: ScreenUtil().setHeight(35)),
                   InkWell(
@@ -113,8 +122,12 @@ class _HomeSreenState extends State<HomeSreen> {
             ),
           ),
         );
+      } else if (state is HomescreenLoading) {
+        return circular();
+      } else if (state is HomescreenSearch) {
+        return const SearchPage();
       } else {
-        return const Text("Hato state daa");
+        return const Text("Hato state");
       }
     });
   }

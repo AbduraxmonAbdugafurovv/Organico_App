@@ -36,7 +36,7 @@ class _OrderStatusReseivedPageState extends State<OrderStatusReseivedPage> {
             } else if (state is HomeLoading) {
               return circular();
             } else {
-              return const Text("Hato");
+              return const Text("Hato order reseive cubit");
             }
           });
         });

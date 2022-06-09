@@ -6,7 +6,7 @@ import 'package:organico/core/constant/constant.dart';
 import 'package:organico/screens/home/cart/my_cart.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
 import 'package:organico/screens/home/explore/explore.dart';
-import 'package:organico/screens/home/home/home_screen.dart';
+import 'package:organico/screens/home/home/homescreen/home_screen.dart';
 import 'package:organico/screens/home/profile/profile.dart';
 import 'package:organico/screens/home/state/home_state.dart';
 
@@ -73,7 +73,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
                 child: CircularProgressIndicator.adaptive(),
               );
             } else {
-              return const Text("Hato");
+              return const Text("Hato bottom cubit ");
             }
           });
         });

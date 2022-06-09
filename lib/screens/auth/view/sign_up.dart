@@ -129,7 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             );
           } else {
-            return const Text("Hato cubitda");
+            return const Text("Hato sign up  cubitda");
           }
         });
       },

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,8 +10,8 @@ import 'package:organico/routes/routes.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/view/sign_in_page.dart';
 import 'package:organico/screens/home/cubit/home_cubit.dart';
+import 'package:organico/screens/home/home/homescreen/cubit_homescren.dart';
 import 'package:organico/screens/home/home/info/cubit_info.dart';
-import 'package:organico/screens/home/home/search/cubit_search.dart';
 import 'package:organico/screens/home/profile/changePasswords/cubit/change_password_cubit.dart';
 import 'package:organico/screens/home/profile/chat/cubit/chat_cubit.dart';
 import 'package:organico/service/hive_service.dart';
@@ -26,7 +27,7 @@ void main() async {
       BlocProvider(create: (context) => ChatCubit()),
       BlocProvider(create: (context) => ChangePasswordCubit()),
       BlocProvider(create: (context) => InfoCubit()),
-      BlocProvider(create: (context)=>SearchCubit()),
+      BlocProvider(create: (context) => HomeScreenCubit()),
     ], child: const MyApp()),
   );
 }
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
           title: 'Organico',
           debugShowCheckedModeBanner: false,
           theme: theme(),
-          initialRoute: "search",
+          initialRoute: "bottom_navigation",
           onGenerateRoute: MyRoutes.instance.onGenerateRoute,
           navigatorKey: NavigationService.instance.navigatorKey,
         );

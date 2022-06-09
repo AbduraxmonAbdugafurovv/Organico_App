@@ -9,7 +9,7 @@ class HomeCubit extends Cubit<HomeState> {
     pageIndex = index;
     emit(HomeInitial());
   }
-
+ 
   final nameControlller = TextEditingController(text: "Joe doe");
   final phoneControlller =
       TextEditingController(text: "998994878083");

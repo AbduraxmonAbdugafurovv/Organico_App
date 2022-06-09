@@ -58,7 +58,7 @@ class _CancelPageState extends State<CancelPage> {
             } else if (state is HomeLoading) {
               return circular();
             } else {
-              return const Text("Hato ");
+              return const Text("Hato cancel cubitda");
             }
           });
         });

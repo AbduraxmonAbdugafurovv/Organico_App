@@ -124,7 +124,7 @@ class _InfoPageState extends State<InfoPage> {
             } else if (state is InfoLoading) {
               return circular();
             } else {
-              return const Text("Hato");
+              return const Text("Hato info cubit da ");
             }
           });
         });

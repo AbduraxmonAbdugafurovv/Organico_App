@@ -91,7 +91,7 @@ class _ChangePasswordState extends State<ChangePassword> {
             } else if (state is ChangePAsswordLoadingState) {
               return circular();
             } else {
-              return const Text("Hato");
+              return const Text("Hato change pasword cubit ");
             }
           });
         });

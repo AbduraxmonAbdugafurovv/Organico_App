@@ -131,7 +131,7 @@ class _MyBagPageState extends State<MyBagPage> {
             } else if (state is HomeLoading) {
               return circular();
             } else {
-              return const Text("JHato");
+              return const Text("JHato my bag");
             }
           });
         });

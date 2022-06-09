@@ -57,7 +57,7 @@ class _ConfirmPhoneProfileState extends State<ConfirmPhoneProfile> {
         else if(state is HomeLoading){
           return const Center(child: CircularProgressIndicator.adaptive(),);
         }else{
-          return const  Text("Hato stateda");
+          return const  Text("Hato confirm stateda");
         }
       });
     });

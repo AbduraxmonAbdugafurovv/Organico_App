@@ -88,7 +88,7 @@ class _MyCartPageState extends State<MyCartPage> {
       } else if (state is HomeLoading) {
         return circular();
       } else {
-        return const Text("Hato");
+        return const Text("Hato my cart cubit ");
       }
     });
   }

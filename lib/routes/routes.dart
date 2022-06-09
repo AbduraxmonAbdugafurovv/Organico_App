@@ -13,7 +13,7 @@ import 'package:organico/screens/home/explore/explore.dart';
 import 'package:organico/screens/home/home/coupon_page.dart';
 import 'package:organico/screens/home/home/info/info_page.dart';
 import 'package:organico/screens/home/home/categies_page.dart.dart';
-import 'package:organico/screens/home/home/search/search_page.dart';
+import 'package:organico/screens/home/home/search_page.dart';
 import 'package:organico/screens/home/home/wishlist.dart';
 import 'package:organico/screens/home/profile/changePasswords/change_password.dart';
 import 'package:organico/screens/home/profile/chat/view/chat.dart';

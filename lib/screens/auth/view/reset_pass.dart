@@ -85,7 +85,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 ),
               );
             } else {
-              return const Text("Hato Cubitda");
+              return const Text("Hato reset Cubitda");
             }
           },
         );
