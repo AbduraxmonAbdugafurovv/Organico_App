@@ -40,7 +40,6 @@ class _HomeSreenState extends State<HomeSreen> {
                     height: ScreenUtil().setHeight(94),
                   ),
                   TextFormField(
-                    controller: context.watch<HomeScreenCubit>().searchController,
                     decoration: InputDecoration(
                         filled: true,
                         hintText: "Search anything here",
@@ -124,7 +123,7 @@ class _HomeSreenState extends State<HomeSreen> {
         );
       } else if (state is HomescreenLoading) {
         return circular();
-      } else if (state is HomescreenSearch) {
+      } else if (state is HomeScreenSearch) {
         return const SearchPage();
       } else {
         return const Text("Hato state");

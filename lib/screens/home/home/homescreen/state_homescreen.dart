@@ -7,6 +7,6 @@ class HomescreenInitial extends HomeScreenState {
 class HomescreenLoading extends HomeScreenState {
   HomescreenLoading();
 }
-class HomescreenSearch extends HomeScreenState {
-  HomescreenSearch();
+class HomeScreenSearch extends HomeScreenState {
+  HomeScreenSearch();
 }
