@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>236493207052-lo6nejd2no4ik7q5od3r37m75tvui1es.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.236493207052-lo6nejd2no4ik7q5od3r37m75tvui1es</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>236493207052-l8q9g6jg4rn3s6im83psapinj0pn5afi.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDpT-L2qu7acb25ao0pIR9UNBRiRHtGu5o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>236493207052</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.organico.organico</string>
+	<key>PROJECT_ID</key>
+	<string>organico-63ece</string>
+	<key>STORAGE_BUCKET</key>
+	<string>organico-63ece.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:236493207052:ios:cf985e9416f74b09fc2029</string>
+</dict>
+</plist>

@@ -42,6 +42,10 @@ dependencies:
   grouped_list: ^5.1.1
   hive: ^2.2.1
   hive_flutter: ^1.1.0
+  firebase_core: ^1.17.1
+  firebase_auth: ^3.3.19
+  mask_text_input_formatter: ^2.3.0
+  cloud_firestore: ^3.1.17
 
 dev_dependencies:
   hive_generator: 

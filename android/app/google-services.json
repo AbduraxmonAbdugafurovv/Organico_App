@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "236493207052",
+    "project_id": "organico-63ece",
+    "storage_bucket": "organico-63ece.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236493207052:android:7f5541df67d91b35fc2029",
+        "android_client_info": {
+          "package_name": "com.organico.organico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236493207052-l8q9g6jg4rn3s6im83psapinj0pn5afi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.organico.organico",
+            "certificate_hash": "b7f930d6d322bed7e14d70eea3cceaeb10e85794"
+          }
+        },
+        {
+          "client_id": "236493207052-ojcl39tl2ps6ksg57jm398i9e8tdiqcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd2Tgk5zfCgUFsICXhBO0vyWx_m-FpUx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236493207052-ojcl39tl2ps6ksg57jm398i9e8tdiqcd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

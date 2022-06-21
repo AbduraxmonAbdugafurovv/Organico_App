@@ -11,9 +11,9 @@ import 'package:organico/screens/home/cart/cancel_page.dart';
 import 'package:organico/screens/home/cart/my_bag.dart';
 import 'package:organico/screens/home/cart/my_orders/view/my_orders.dart';
 import 'package:organico/screens/home/explore/explore.dart';
+import 'package:organico/screens/home/home/categies_page.dart.dart';
 import 'package:organico/screens/home/home/coupon_page.dart';
 import 'package:organico/screens/home/home/info/info_page.dart';
-import 'package:organico/screens/home/home/categies_page.dart.dart';
 import 'package:organico/screens/home/home/search_page.dart';
 import 'package:organico/screens/home/home/wishlist.dart';
 import 'package:organico/screens/home/profile/changePasswords/change_password.dart';
@@ -30,6 +30,7 @@ class MyRoutes {
   static MyRoutes get instance => _instance;
   MyRoutes._init();
 
+  
   Route? onGenerateRoute(RouteSettings settings) {
     var args = settings.arguments;
     switch (settings.name) {
@@ -71,7 +72,7 @@ class MyRoutes {
         return route(const PaymentMethodPage());
       case "wishlist":
         return route(const WishList());
-      case "chat":
+       case "chat":
         return route(ChatPage(info: args as Model));
       case "my_bag":
         return route(const MyBagPage());

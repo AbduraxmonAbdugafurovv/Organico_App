@@ -8,8 +8,10 @@ import 'package:organico/core/components/sign/inputfield.dart';
 import 'package:organico/core/components/sign/sign_with_google.dart';
 import 'package:organico/core/components/sign/text_before_input.dart';
 import 'package:organico/core/constant/constant.dart';
+import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/state/auth_state.dart';
+import 'package:organico/widgets/snackbar_widget.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -23,11 +25,11 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     bool isCheked = context.watch<AuthCubit>().isCheked;
     TextEditingController passwordController =
-        context.watch<AuthCubit>().passwordConroller;
+        context.watch<AuthCubit>().passwordController;
     TextEditingController confirmPasswordController =
         context.watch<AuthCubit>().confirmpasswordController;
     TextEditingController nameController =
-        context.watch<AuthCubit>().nameConroller;
+        context.watch<AuthCubit>().nameController;
     return BaseView(
       viewModal: const SignUpPage(),
       onPageBuildre: (context, widget) {
@@ -112,7 +114,14 @@ class _SignUpPageState extends State<SignUpPage> {
                       SizedBox(
                         height: ScreenUtil().setHeight(45),
                       ),
-                      mainButton("Sign Up"),
+                      InkWell(
+                        child: mainButton("Sign Up"),
+                        onTap:() async{
+                         await signUpCheck(passwordController.text,confirmPasswordController.text);
+                            NavigationService.instance.pushNamed("forgot_password");
+                          } 
+                     
+                      ),
                       SizedBox(height: ScreenUtil().setHeight(24)),
                       Center(
                         child: Text("or use",
@@ -129,10 +138,19 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             );
           } else {
-            return const Text("Hato sign up  cubitda");
+            return Scaffold(appBar: AppBar(title: const Text("Hato cubitda")),);
           }
         });
       },
     );
+  }
+
+  signUpCheck(String passwordController, String confirmPasswordController) {
+    if (passwordController == confirmPasswordController) {
+      Navigator.pushNamed(context, "forgot_password");
+    } else {
+      SnackBarWidget.showSnackBar(
+          context, "Confirm password incorrect", Colors.red);
+    }
   }
 }
