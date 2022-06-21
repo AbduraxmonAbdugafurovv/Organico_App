@@ -116,10 +116,11 @@ class _MyBagPageState extends State<MyBagPage> {
                             )
                           ],
                         ),
+                        SizedBox(height: ScreenUtil().setHeight(40)),
                         InkWell(
                           child: mainButton("Order now"),
                           onTap: () {
-                            NavigationService.instance.pushNamed("");
+                            NavigationService.instance.pushNamed("my_orders");
                           },
                         ),
                         SizedBox(height: ScreenUtil().setHeight(45)),

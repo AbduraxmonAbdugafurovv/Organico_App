@@ -114,7 +114,7 @@ class _SearchPageState extends State<SearchPage> {
         });
   }
 
-  Expanded searchingResults(BuildContext context) {
+  Expanded  searchingResults(BuildContext context) {
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -9,6 +9,7 @@ import 'package:organico/screens/auth/view/splash_page.dart';
 import 'package:organico/screens/home/bottom_navigation.dart';
 import 'package:organico/screens/home/cart/cancel_page.dart';
 import 'package:organico/screens/home/cart/my_bag.dart';
+import 'package:organico/screens/home/cart/my_orders/view/my_orders.dart';
 import 'package:organico/screens/home/explore/explore.dart';
 import 'package:organico/screens/home/home/coupon_page.dart';
 import 'package:organico/screens/home/home/info/info_page.dart';
@@ -78,6 +79,8 @@ class MyRoutes {
         return route(const CancelPage());
       case "search":
         return route(const SearchPage());
+      case "my_orders":
+        return route(const MyOrdersPage());
     }
     return null;
   }
