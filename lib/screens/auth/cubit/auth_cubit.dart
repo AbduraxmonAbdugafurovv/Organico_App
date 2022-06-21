@@ -7,10 +7,10 @@ import 'package:organico/screens/auth/state/auth_state.dart';
 class AuthCubit extends Cubit<AuhtState> {
   AuthCubit() : super(AuthInitial());
 
-  TextEditingController nameConroller = TextEditingController();
-  TextEditingController phoneNumberConroller = TextEditingController(text: "+998");
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController(text: "+998");
   TextEditingController smsController = TextEditingController();
-  TextEditingController passwordConroller = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
   final key = GlobalKey<FormState>();
   bool obsecureText1 = false;

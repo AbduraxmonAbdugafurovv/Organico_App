@@ -25,9 +25,9 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     TextEditingController phoneNumberController =
-        context.watch<AuthCubit>().phoneNumberConroller;
+        context.watch<AuthCubit>().phoneNumberController;
     TextEditingController passwordController =
-        context.watch<AuthCubit>().passwordConroller;
+        context.watch<AuthCubit>().passwordController;
     GlobalKey key = context.watch<AuthCubit>().key;
     return BaseView(
       viewModal: const SignInPage(),

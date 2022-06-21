@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:organico/model/model.dart';
 import 'package:organico/screens/auth/view/confirm_number.dart';
 import 'package:organico/screens/auth/view/forgot_password.dart';
 import 'package:organico/screens/auth/view/reset_pass.dart';
@@ -14,7 +15,7 @@ import 'package:organico/screens/home/view/home/info_page.dart';
 import 'package:organico/screens/home/view/home/vegetables_page.dart';
 import 'package:organico/screens/home/view/home/wishlist.dart';
 import 'package:organico/screens/home/view/profile/changePasswords/change_password.dart';
-import 'package:organico/screens/home/view/profile/chat.dart';
+import 'package:organico/screens/home/view/profile/chat/view/chat.dart';
 import 'package:organico/screens/home/view/profile/confirm_number_profile.dart';
 import 'package:organico/screens/home/view/profile/edit_profile.dart';
 import 'package:organico/screens/home/view/profile/my_address.dart';
@@ -27,7 +28,9 @@ class MyRoutes {
   static MyRoutes get instance => _instance;
   MyRoutes._init();
 
+  
   Route? onGenerateRoute(RouteSettings settings) {
+    var args = settings.arguments;
     switch (settings.name) {
       case "splash":
         return route(const SplashPage());
@@ -67,8 +70,8 @@ class MyRoutes {
         return route(const PaymentMethodPage());
       case "wishlist":
         return route(const WishList());
-      case "chat":
-        return route(const ChatPage());
+       case "chat":
+        return route(ChatPage(info: args as Model));
       case "my_bag":
         return route(const MyBagPage());
       case "cancel_page":

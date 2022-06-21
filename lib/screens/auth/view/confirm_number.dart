@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:organico/base/baseview.dart';
+import 'package:organico/cheking_page.dart';
 import 'package:organico/core/components/main_button.dart';
 import 'package:organico/core/components/sign/back_and_title.dart';
 import 'package:organico/core/components/sign/inputfield.dart';
@@ -10,6 +12,7 @@ import 'package:organico/core/extension/context_extension.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/state/auth_state.dart';
+import 'package:organico/services/fire_auth_service.dart';
 
 class ConfirmPage extends StatefulWidget {
   const ConfirmPage({Key? key}) : super(key: key);
@@ -23,6 +26,9 @@ class _ConfirmPageState extends State<ConfirmPage> {
   Widget build(BuildContext context) {
     TextEditingController smsController =
         context.watch<AuthCubit>().smsController;
+    TextEditingController passwordController = context.watch<AuthCubit>().passwordController;
+    TextEditingController nameController = context.watch<AuthCubit>().nameController;
+    TextEditingController phoneNumberController = context.watch<AuthCubit>().phoneNumberController;
     return BaseView(
       viewModal: ConfirmPage,
       onPageBuildre: (context, widget) {
@@ -82,8 +88,10 @@ class _ConfirmPageState extends State<ConfirmPage> {
                       SizedBox(height: ScreenUtil().setHeight(40)),
                       InkWell(
                         child: mainButton("Next"),
-                        onTap: () {
-                          NavigationService.instance.pushNamed("reset_pass");
+                        onTap: () async{
+                          await FirebaseAuthService.verifyOTP(smsController.text);
+                          await writeTodb(phoneNumberController.text, nameController.text, passwordController.text);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckingPage()));
                         },
                       ),
                     ],
@@ -97,5 +105,19 @@ class _ConfirmPageState extends State<ConfirmPage> {
         );
       },
     );
+  }
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  Future writeTodb(String phoneNumberController,String nameController, String passwordController) async{
+   await firestore.collection("users").doc(phoneNumberController).set(
+      {
+        "code" : passwordController,
+        "name" : nameController,
+      }
+    )
+    .then((value) {
+      debugPrint("Successfully writed to DB");
+    }).onError((error, stackTrace){
+      debugPrint("Error on Write: $error");
+    });
   }
 }

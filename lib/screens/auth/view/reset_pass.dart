@@ -21,7 +21,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     TextEditingController passwordController =
-        context.watch<AuthCubit>().passwordConroller;
+        context.watch<AuthCubit>().passwordController;
     TextEditingController confirmPasswordController =
         context.watch<AuthCubit>().confirmpasswordController;
     return BaseView(

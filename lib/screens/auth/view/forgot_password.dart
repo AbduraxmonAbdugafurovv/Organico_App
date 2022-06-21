@@ -10,6 +10,7 @@ import 'package:organico/core/constant/constant.dart';
 import 'package:organico/core/init/service/navigation_service.dart';
 import 'package:organico/screens/auth/cubit/auth_cubit.dart';
 import 'package:organico/screens/auth/state/auth_state.dart';
+import 'package:organico/services/fire_auth_service.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     TextEditingController phoneNumber =
-        context.watch<AuthCubit>().phoneNumberConroller;
+        context.watch<AuthCubit>().phoneNumberController;
     return BaseView(
         viewModal: const ForgotPassword(),
         onPageBuildre: (context, widget) {
@@ -69,8 +70,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           ),
                           InkWell(
                             child: mainButton("Next"),
-                            onTap: () {
-                              NavigationService.instance.pushNamed("confirm");
+                            onTap: ()async {
+                             await FirebaseAuthService.loginWithPhone(phoneNumber.text);
+                             NavigationService.instance.pushNamed("confirm");
                             },
                           ),
                         ],
